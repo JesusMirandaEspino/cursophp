@@ -7,11 +7,41 @@ $nombre = 'Jesus';
 $edad = 32;
 
 // double
-$deciman = 3.2;
+$decimal = 3.2;
 
 //booleans
-$verdaro = true;
+$verdadero = true;
 $falso = false;
+
+
+
+
+?>
+
+<?php
+    //type of variable
+    echo gettype($nombre);
+    echo gettype($edad);
+    echo gettype($decimal);
+    echo gettype($verdadero);
+
+    //Constant
+    define('PI', 3.1416);
+    echo  PI;
+
+//arreglo indexado
+$semana = array( 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo' );
+
+echo '  ' . $semana[3];
+
+
+$meses = array( '1' => 'Enero', '2' => 'Febrero','3' => 'Marzo', '4' => 'Abril', '5' => 'Mayo', '6' => 'Junio', '7' => 'Julio', '8' => 'Agosto', '9' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre' );
+
+
+echo $meses['1'];
+
+//arreglo asociado
+
 
 ?>
 
