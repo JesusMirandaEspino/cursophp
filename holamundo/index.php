@@ -35,7 +35,7 @@ echo '  ' . $semana[3];
 
 
 $meses = array('1' => 'Enero', '2' => 'Febrero', '3' => 'Marzo', '4' => 'Abril', '5' => 'Mayo', '6' => 'Junio', '7' => 'Julio', '8' => 'Agosto', '9' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre');
-
+$numeros = array( 1,5,8,4,6,7,2,9,6,3 );
 
 echo $meses['1'];
 
@@ -105,9 +105,26 @@ echo $nummeses;
         <h2>Meses del año</h2>
 
         <ul>
-            <?php foreach ($meses as $mes) {
+            <?php 
+            // Ciclo foreach
+
+            //orden alfabetico
+            //sort( $meses );
+
+            //orden descendente
+            //rsort($meses);
+
+            foreach ($meses as $mes) {
                 echo '<li>' . $mes . '</li>';
-            }  ?> 
+            }
+
+
+            sort($numeros);
+            foreach ($numeros as $numero) {
+                echo '<li>' . $numero . '</li>';
+            }  
+
+            ?> 
         </ul>
 
     </main>
