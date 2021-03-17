@@ -35,7 +35,7 @@ echo '  ' . $semana[3];
 
 
 $meses = array('1' => 'Enero', '2' => 'Febrero', '3' => 'Marzo', '4' => 'Abril', '5' => 'Mayo', '6' => 'Junio', '7' => 'Julio', '8' => 'Agosto', '9' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre');
-$numeros = array( 1,5,8,4,6,7,2,9,6,3 );
+$numeros = array(1, 5, 8, 4, 6, 7, 2, 9, 6, 3);
 
 echo $meses['1'];
 
@@ -105,7 +105,7 @@ echo $nummeses;
         <h2>Meses del año</h2>
 
         <ul>
-            <?php 
+            <?php
             // Ciclo foreach
 
             //orden alfabetico
@@ -122,53 +122,62 @@ echo $nummeses;
             sort($numeros);
             foreach ($numeros as $numero) {
                 echo '<li>' . $numero . '</li>';
-            }  
+            }
 
-            ?> 
+            ?>
         </ul>
 
 
 
-            <?php   
-            
-                $edad = 19;
+        <?php
 
-                if( $edad >= 18 ){
-                    echo '<h2>' . 'Tener: ' . $edad . ' Es ser mayor de edad'  .'</h2>';
-                }else{
-                    echo '<h2>' . '  Eres menor de edad '  . '</h2>';
-                }
+        $edad = 19;
 
-            ?>
+        if ($edad >= 18) {
+            echo '<h2>' . 'Tener: ' . $edad . ' Es ser mayor de edad'  . '</h2>';
+        } else {
+            echo '<h2>' . '  Eres menor de edad '  . '</h2>';
+        }
 
-
-
-            <?php
+        ?>
 
 
-                $valor = 1;
 
-                switch($valor){
-
-                    case 1:
-                        echo 'El valor es uno';
-                        break;
-
-                    case 2:
-                        echo 'El valor es dos';
-                        break;
-
-                    case 3:
-                        echo 'El valor es tres';
-                        break;
-
-                    default: break;
-                        
-                        
-                }
+        <?php
 
 
-            ?>
+        $valor = 1;
+
+        switch ($valor) {
+
+            case 1:
+                echo 'El valor es uno';
+                break;
+
+            case 2:
+                echo 'El valor es dos';
+                break;
+
+            case 3:
+                echo 'El valor es tres';
+                break;
+
+            default:
+                break;
+        }
+
+
+        ?>
+
+
+        <?php
+
+
+        $edades = (  isset($edades) ) ? $edades :  'Aun no tiene valor' ;
+
+        echo $edades;
+
+        ?>
 
 
     </main>
