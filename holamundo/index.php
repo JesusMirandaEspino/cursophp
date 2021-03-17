@@ -15,7 +15,6 @@ $falso = false;
 
 
 
-
 ?>
 
 <?php
@@ -40,8 +39,15 @@ $meses = array( '1' => 'Enero', '2' => 'Febrero','3' => 'Marzo', '4' => 'Abril',
 
 echo $meses['1'];
 
-//arreglo asociado
+//Arreglo multidimensional
+    $amigos = array(
+                array('yisus', 5500),
+                array('Mutuelo', 6000)
+                );
 
+$nummeses = count( $meses );
+
+echo $nummeses;
 
 ?>
 
