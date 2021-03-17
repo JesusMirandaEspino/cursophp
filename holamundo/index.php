@@ -127,6 +127,21 @@ echo $nummeses;
             ?> 
         </ul>
 
+
+
+            <?php   
+            
+                $edad = 19;
+
+                if( $edad >= 18 ){
+                    echo '<h2>' . 'Tener: ' . $edad . ' Es ser mayor de edad'  .'</h2>';
+                }else{
+                    echo '<h2>' . '  Eres menor de edad '  . '</h2>';
+                }
+
+            ?>
+
+
     </main>
 
 
