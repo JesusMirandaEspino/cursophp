@@ -142,6 +142,35 @@ echo $nummeses;
             ?>
 
 
+
+            <?php
+
+
+                $valor = 1;
+
+                switch($valor){
+
+                    case 1:
+                        echo 'El valor es uno';
+                        break;
+
+                    case 2:
+                        echo 'El valor es dos';
+                        break;
+
+                    case 3:
+                        echo 'El valor es tres';
+                        break;
+
+                    default: break;
+                        
+                        
+                }
+
+
+            ?>
+
+
     </main>
 
 
