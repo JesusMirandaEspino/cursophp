@@ -173,9 +173,19 @@ echo $nummeses;
         <?php
 
 
-        $edades = (  isset($edades) ) ? $edades :  'Aun no tiene valor' ;
+        $edades = (isset($edades)) ? $edades :  'Aun no tiene valor';
 
         echo $edades;
+
+        ?>
+
+
+        <?php
+
+
+        for( $i = 1; $i <= 100; $i++ ){
+            echo ' ' . $i;
+        }
 
         ?>
 
