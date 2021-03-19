@@ -182,12 +182,41 @@ echo $nummeses;
 
         <?php
 
-
+        //Ciclo for
         for( $i = 1; $i <= 100; $i++ ){
             echo ' ' . $i;
         }
 
         ?>
+
+
+        <?php
+
+
+        $edades = (isset($edades)) ? $edades :  'Aun no tiene valor';
+
+        echo $edades;
+
+        ?>
+
+        </br>
+        </br>
+
+        <?php
+
+        //ciclo while
+        $contador = 0;
+
+        while( $contador <= 10 ){
+
+            echo $contador . ' ' . '</br>';
+
+            $contador++;
+
+        }
+
+        ?>
+
 
 
     </main>
