@@ -249,6 +249,24 @@ echo $nummeses;
 
         ?>
 
+
+        <br/>
+        <br/>
+
+        <?php 
+        
+        $valor = 0;
+
+        do{
+            echo $valor . '<br/>';
+
+            $valor++;   
+
+        }while($valor <= 10  );
+
+
+        ?>
+
     </main>
 
 
