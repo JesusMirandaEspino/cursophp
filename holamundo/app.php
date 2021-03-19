@@ -6,6 +6,8 @@ $numero2 = '5';
 $arreglo = array( 'Yisus', 'Mutuelo', 'Ramo' );
 $asociativo = array( '1' => 'uno', '2' => 'dos', '3' => 'tres' );
 $booleano = false;
+$textoFormulario = '< > && "" ';
+$cadena = '  Hola ';
 
 var_dump( $texto );
 print_r( $texto );
@@ -15,15 +17,27 @@ function saludo(){
     echo 'Hola desde php';
 }
 
+function resta( $x, $y  ){
+    return $x - $y;
+}
+
 
 function suma( $a, $b ){
-    $c = $a + $b;
-    echo 'La suma de los valores es ' . $c;
+    return $a + $b;
 }
 
 saludo();
-suma( 5, 10 );
 
+echo resta( suma( 5, 10 ), 5 );
+
+
+echo htmlspecialchars( $textoFormulario );
+echo trim( $cadena );
+echo strlen( $textoFormulario );
+echo substr($textoFormulario, 2, 4 );
+echo strtoupper($texto);
+echo strtolower($texto); 
+echo strpos($texto, 'u' );
 ?>
 
 
