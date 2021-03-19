@@ -183,7 +183,7 @@ echo $nummeses;
         <?php
 
         //Ciclo for
-        for( $i = 1; $i <= 100; $i++ ){
+        for ($i = 1; $i <= 100; $i++) {
             echo ' ' . $i;
         }
 
@@ -207,17 +207,47 @@ echo $nummeses;
         //ciclo while
         $contador = 0;
 
-        while( $contador <= 10 ){
+        while ($contador <= 10) {
 
-            echo $contador . ' ' . '</br>';
+            echo $contador . ' ' .   '<br>';
 
             $contador++;
-
         }
 
         ?>
 
+        </br>
+        </br>
 
+
+        <?php
+
+        //Ciclo for
+        for ($i = 0; $i < count($semana); $i++) {
+            echo $semana[$i] . '<br>';
+        }
+
+        ?>
+
+        </br>
+        </br>
+
+
+        <?php
+
+
+
+        //ciclo while
+        $contadorSemana = 0;
+
+        while ($contadorSemana < count($semana)) {
+
+            echo $semana[$contadorSemana] . '<br>';
+
+            $contadorSemana++;
+        }
+
+        ?>
 
     </main>
 
@@ -226,11 +256,7 @@ echo $nummeses;
     <!-- **************************  -->
     <footer>
 
-
     </footer>
-
-
-
 </body>
 
 </html>
