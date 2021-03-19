@@ -4,10 +4,11 @@ $texto = 'Jesus';
 $numero = 10;
 $numero2 = '5';
 $arreglo = array( 'Yisus', 'Mutuelo', 'Ramo' );
-$asociativo = array( '1' => 'uno', '2' => 'dos', '3' => 'tres' );
+$asociativo = array( 'valor1' => 'uno', 'valor2' => 'dos', 'valor3' => 'tres' );
 $booleano = false;
 $textoFormulario = '< > && "" ';
 $cadena = '  Hola ';
+$semana = array('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo');
 
 var_dump( $texto );
 print_r( $texto );
@@ -30,14 +31,51 @@ saludo();
 
 echo resta( suma( 5, 10 ), 5 );
 
-
+//convierte los caracteres especiales en texto
 echo htmlspecialchars( $textoFormulario );
+
+//elimina espacios en texto
 echo trim( $cadena );
+
+//Muestra el tamaño en numero de los caracteres
 echo strlen( $textoFormulario );
+
+//Corta el texto desde la posicion indicada la inicio a la indicada al final
 echo substr($textoFormulario, 2, 4 );
+
+//Convierte  a mayusculas
 echo strtoupper($texto);
+
+//Convierte a minusculas
 echo strtolower($texto); 
+
+//Busca e incida la posicion de un caracter
 echo strpos($texto, 'u' );
+
+//extrae los valores de un array asociativo y los convierte en variables
+extract( $asociativo );
+echo $valor1;
+
+//extrae el ultimo elemento de un array
+$ultimo = array_pop($semana );
+echo $ultimo;
+
+//invierte el arreglo
+$semanaR = array_reverse( $semana );
+echo join(' - ', $semanaR);
+
+//une los elementos de un array
+echo join( ' - ', $semana  );
+
+//ordena de forma alfabetica
+rsort($semana );
+echo join(' - ', $semana);
+
+sort($semana);
+echo join(' - ', $semana);
+
+
+
 ?>
 
 
