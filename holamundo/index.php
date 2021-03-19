@@ -49,6 +49,8 @@ $nummeses = count($meses);
 
 echo $nummeses;
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -114,9 +116,9 @@ echo $nummeses;
             //orden descendente
             //rsort($meses);
 
-            foreach ($meses as $mes) {
-                echo '<li>' . $mes . '</li>';
-            }
+            //   foreach ($meses as $mes1) {
+            //       echo '<li>' . $mes1 . '</li>';
+            //   }
 
 
             sort($numeros);
@@ -273,10 +275,41 @@ echo $nummeses;
         <ul>
             <?php
             foreach ($meses as $mes => $suValor) {
-                echo  '<li>' . $mes . ' : ' .  $suValor  . '</li>' ;
+                echo  '<li>' . $mes . ' : ' .  $suValor  . '</li>';
             }
             ?>
         </ul>
+
+        <br />
+        <br />
+
+        <?php
+        foreach ($semana as $dia) {
+            echo  $dia . '<br/>';
+
+            if ($dia == 'Miercoles') {
+                break;
+            }
+        }
+        ?>
+
+        <br />
+        <br />
+
+
+        <?php
+        foreach ($semana as $dia) {
+
+
+            if ($dia == 'Miercoles') {
+                continue;
+            }
+
+            echo  $dia . '<br/>';
+
+        }
+        ?>
+
     </main>
 
 
