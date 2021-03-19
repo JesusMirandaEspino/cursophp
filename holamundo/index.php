@@ -250,23 +250,33 @@ echo $nummeses;
         ?>
 
 
-        <br/>
-        <br/>
+        <br />
+        <br />
 
-        <?php 
-        
+        <?php
+
         $valor = 0;
 
-        do{
+        do {
             echo $valor . '<br/>';
 
-            $valor++;   
-
-        }while($valor <= 10  );
+            $valor++;
+        } while ($valor <= 10);
 
 
         ?>
 
+
+
+        <br />
+        <br />
+        <ul>
+            <?php
+            foreach ($meses as $mes => $suValor) {
+                echo  '<li>' . $mes . ' : ' .  $suValor  . '</li>' ;
+            }
+            ?>
+        </ul>
     </main>
 
 
