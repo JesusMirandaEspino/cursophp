@@ -49,7 +49,7 @@
 
         <section class="fila">
 
-            <form action="app.php" method="" class="contenedor1">
+            <form action="app.php" method="post" class="contenedor1">
 
                 <div class="col-full-12">
                     <label for="nameuser">Nombre</label>
@@ -58,9 +58,9 @@
 
                 <div class="col-full-12">
                     <label for="man">Masculino</label>
-                    <input type="radio" name="sextype" id="man" value="Hombre">
+                    <input type="radio" name="sextype" id="man" value="man">
                     <label for="woman">Femenino</label>
-                    <input type="radio" name="sextype" id="woman" value="Mujer">
+                    <input type="radio" name="sextype" id="woman" value="woman">
                 </div>
 
                 <div class="col-full-12">
