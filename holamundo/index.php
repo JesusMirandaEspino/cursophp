@@ -310,6 +310,22 @@ echo $nummeses;
         }
         ?>
 
+
+
+        <?php
+
+            $numero1 = 15.789;
+
+            echo '<br/>' . round( $numero1, 1 );
+
+            echo '<br/>' . rand( 1, 10 );
+
+            echo '<br/>' . ceil( 5.2 );
+
+        ?>
+
+
+
     </main>
 
 
