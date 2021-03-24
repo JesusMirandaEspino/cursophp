@@ -11,5 +11,6 @@
     $year     = $_POST['year'];
     $terms    = $_POST['terms'];
 
+    echo 'Hola: ' . $nameUser;
 
 ?>
