@@ -33,6 +33,12 @@ if (isset($_POST['submit'])) {
     }
 
     if (!empty($emailuser)) {
+        $emailuser = filter_var($emailuser, FILTER_SANITIZE_STRING);
+
+        if( !filter_var( $emailuser, FILTER_VALIDATE_EMAIL ) ){
+            $errores .= 'Por favor agrega un correo valido';
+        }
+
         echo $emailuser;
     } else {
         $errores .= 'Por favor agrega un Correo';
