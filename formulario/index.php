@@ -1,5 +1,8 @@
-<?php   
+<?php
 
+$errores = '';
+
+//MEtodo para ver si se hizo por post o por get
 /*
     if( $_POST ){
         if($_SERVER['REQUEST_METHOD']  == 'GET') {
@@ -10,8 +13,30 @@
     }
 */
 
-if( isset( $_POST['submit'] ) ){
-    echo 'Se han enviado los datos';
+
+
+//Se ha validad si se ha seteado el submit
+if (isset($_POST['submit'])) {
+
+    $nameUser = $_POST['nameuser'];
+
+    if (!empty($nameUser)) {
+        // $nameUser = trim($nameUser);
+        // $nameUser = htmlspecialchars($nameUser);
+        // $nameUser = stripslashes($nameUser);
+
+        $nameUser = filter_var($nameUser, FILTER_SANITIZE_STRING);
+
+        echo $nameUser;
+    } else {
+        $errores .= 'Por favor agrega un Nombre';
+    }
+
+    if (!empty($emailuser)) {
+        echo $emailuser;
+    } else {
+        $errores .= 'Por favor agrega un Correo';
+    }
 }
 
 
@@ -70,11 +95,16 @@ if( isset( $_POST['submit'] ) ){
 
         <section class="fila">
 
-            <form action=" <?php  echo htmlspecialchars( $_SERVER['PHP_SELF']  ) ?>  " method="post" class="contenedor1">
+            <form action=" <?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>  " method="post" class="contenedor1">
 
                 <div class="col-full-12">
                     <label for="nameuser">Nombre</label>
                     <input type="text" id="nameuser" name="nameuser">
+                </div>
+
+                <div class="col-full-12">
+                    <label for="emailuser">Correo</label>
+                    <input type="email" id="emailuser" name="emailuser">
                 </div>
 
                 <div class="col-full-12">
@@ -99,7 +129,13 @@ if( isset( $_POST['submit'] ) ){
                     <input type="checkbox" name="terms" id="temrs" value="ok">
                 </div>
 
+                <?php if (!empty($errores)) : ?>
 
+                    <div class="col-full-12">
+                        <h3> <?php echo $errores;  ?> </h3>
+                    </div>
+
+                <?php endif; ?>
 
                 <div class="col-full-12">
                     <input type="submit" value="Enviar" name="submit">
