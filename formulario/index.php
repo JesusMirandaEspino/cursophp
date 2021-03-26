@@ -49,7 +49,7 @@
 
         <section class="fila">
 
-            <form action="app.php" method="post" class="contenedor1">
+            <form action=" <?php  echo htmlspecialchars( $_SERVER['PHP_SELF']  ) ?>  " method="post" class="contenedor1">
 
                 <div class="col-full-12">
                     <label for="nameuser">Nombre</label>
