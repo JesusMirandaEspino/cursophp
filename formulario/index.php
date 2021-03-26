@@ -1,3 +1,24 @@
+<?php   
+
+/*
+    if( $_POST ){
+        if($_SERVER['REQUEST_METHOD']  == 'GET') {
+            echo 'Se enviaron los datos por metodo GET';
+        }else{
+            echo 'Se enviaron los datos por metodo POST';
+        }
+    }
+*/
+
+if( isset( $_POST['submit'] ) ){
+    echo 'Se han enviado los datos';
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -81,7 +102,7 @@
 
 
                 <div class="col-full-12">
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" name="submit">
                 </div>
 
 
