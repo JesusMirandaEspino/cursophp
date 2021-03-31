@@ -13,12 +13,18 @@
             $nameuser = trim($nameuser);
             $nameuser = filter_var($nameuser, FILTER_SANITIZE_STRING);
         }else{
-        $errores .= 'Por Favor Ingresa Un nombre </br>  ';
+            $errores .= 'Por Favor Ingresa Un nombre <br/>  ';
         }
 
 
         if( !empty($emailuser ) ){
             $emailuser = filter_var($emailuser, FILTER_SANITIZE_EMAIL);
+            
+            if(!filter_var($emailuser, FILTER_VALIDATE_EMAIL )){
+                $errores .= 'Por Favor Ingresa Un Correo Valido <br/>  ';  
+            }
+        }else{
+            $errores .= 'Por Favor Ingresa Un Correo<br/>  ';  
         }
 
     }
@@ -28,3 +34,4 @@
     require( 'index.view.php' );
 
 ?>
+
