@@ -80,6 +80,28 @@
                 </div>
 
 
+                <?php if (!empty($errores)) :   ?>
+                    <div class="col-full-12  error">
+                        <?php echo $errores; ?>
+                    </div>
+
+                <?php elseif ($enviado) : ?>
+                    <div class="col-full-12  sucess">
+                        <P>Enviado Correctamente</P>
+                    </div>
+                <?php endif ?>
+
+
+
+
+
+                <div class="col-full-12  alert">
+                    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Corporis accusantium dignissimos iure sed iste impedit assumenda,
+                        eligendi velit quaerat eaque ipsum et nulla totam, cum eos placeat nemo. Veritatis, harum.
+                    </P>
+                </div>
+
                 <div class="col-full-12">
                     <input type="submit" value="Enviar" name="submit">
                 </div>
