@@ -1,1 +1,30 @@
-body{font-family:"Lato",sans-serif;font-size:24px}
+body{
+    font-family:"Lato",sans-serif;
+    font-size:24px;
+}
+
+.title{
+    margin-top:24px;
+    margin-bottom: 24px;
+}
+
+form{
+    margin-top:24px;
+}
+
+label{
+    margin-top:12px;
+}
+
+input{
+    margin-bottom:12px;  
+}
+
+
+textarea{
+    margin-top:24px;
+}
+
+input[type=submit]{
+    margin-top:24px;
+}
