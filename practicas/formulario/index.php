@@ -23,8 +23,31 @@
             if(!filter_var($emailuser, FILTER_VALIDATE_EMAIL )){
                 $errores .= 'Por Favor Ingresa Un Correo Valido <br/>  ';  
             }
+
         }else{
             $errores .= 'Por Favor Ingresa Un Correo<br/>  ';  
+        }
+
+
+        if( !empty($menssage) ){
+            $menssage = htmlspecialchars($menssage);
+            $menssage = trim($menssage);
+            $menssage = stripslashes($menssage);
+        }else{
+            $errores .= 'Por Favor Ingresa Un Mensaje <br/>  ';  
+        }
+
+
+        if( !$errores ){
+            $asunto = 'Asunto del correo';
+            $mensaje_preparado = "De: $nameuser ";
+            $mensaje_preparado .= "Correo:  $emailuser ";
+            $mensaje_preparado .= "Mensaje:  $menssage ";
+
+           // mail($enviar_a, $asunto, $mensaje_preparado );
+
+            $enviado = true;
+
         }
 
     }
