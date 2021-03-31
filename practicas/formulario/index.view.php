@@ -65,18 +65,24 @@
                     <label for="nameuser">Nombre</label>
                 </div>
                 <div class="col-full-12">
-                    <input type="text" id="nameuser" name="nameuser" placeholder="Nombre">
+                    <input type="text" id="nameuser" name="nameuser" placeholder="Nombre" value="<?php if (!$enviado && isset($nameuser)) {
+                                                                                                        echo $nameuser;
+                                                                                                    }  ?>">
                 </div>
 
                 <div class="col-full-12">
                     <label for="emailuser">Correo</label>
                 </div>
                 <div class="col-full-12">
-                    <input type="email" id="emailuser" name="emailuser" placeholder="Correo">
+                    <input type="email" id="emailuser" name="emailuser" placeholder="Correo" value="<?php if (!$enviado && isset($emailuser)) {
+                                                                                                        echo $emailuser;
+                                                                                                    }  ?>">
                 </div>
 
                 <div class="col-full-12 ">
-                    <textarea name="menssage" id="menssage" cols="30" rows="10"></textarea>
+                    <textarea name="menssage" id="menssage" cols="30" rows="10" value="<?php if (!$enviado && isset($menssage)) {
+                                                                                            echo $menssage;
+                                                                                        }  ?>"></textarea>
                 </div>
 
 
