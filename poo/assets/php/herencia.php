@@ -12,11 +12,12 @@ class Personaje {
     //nose puede heredar
     private $id;
 
-    public function __construct($nombre, $edad, $pais, $id ){
+    public function __construct($nombre, $edad, $pais, $id, $contrasena ){
         $this->nombre = $nombre;
         $this->edad = $edad;
         $this->pais = $pais;
         $this->id = $id;
+        $this->icontrasena = $contrasena;
     }
 
     public function mostrarInformacion(){
@@ -27,9 +28,9 @@ class Personaje {
 
 class Estudiante extends Personaje {
 
-    public function __construct( $nombre, $edad, $pais,  $profesion)
+    public function __construct( $nombre, $edad, $pais,  $contrasena, $id,  $profesion)
     {
-        parent::__construct($nombre, $edad, $pais);
+        parent::__construct($nombre, $edad, $pais, $contrasena, $id);
         $this->profesion = $profesion;
     }
 
@@ -39,7 +40,7 @@ class Estudiante extends Personaje {
 
 echo '<br/>';
 
-$usuario1  = new Estudiante('Mutuelo', 25000, 'lightstorm', 'Mago');
+$usuario1  = new Estudiante('Mutuelo', 25000, 'lightstorm', 12514, 2541, 'Mago');
 echo  $usuario1->mostrarInformacion();
 
 ?>
