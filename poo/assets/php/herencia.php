@@ -5,10 +5,18 @@ class Personaje {
     public $edad;
     public $pais;
 
-    public function __construct($nombre, $edad, $pais ){
+    //solo se puede acceder dentro de la clase
+    protected $contrasena;
+
+
+    //nose puede heredar
+    private $id;
+
+    public function __construct($nombre, $edad, $pais, $id ){
         $this->nombre = $nombre;
         $this->edad = $edad;
         $this->pais = $pais;
+        $this->id = $id;
     }
 
     public function mostrarInformacion(){
