@@ -1,5 +1,5 @@
 <?php 
-require('/assets/php/class.php');
+require('./assets/php/class.php');
 
 
 ?>
