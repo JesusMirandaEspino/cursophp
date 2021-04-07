@@ -2,7 +2,7 @@
 
 
 if( isset($_COOKIE['font-size']) ){
-    $tamano = $_COOKIE['font-size'];
+    $tamano =  htmlspecialchars($_COOKIE['font-size']);
 }else{
     $tamano = '15px;';
 }
