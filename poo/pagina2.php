@@ -1,11 +1,16 @@
-<?php 
-require('./assets/php/class.php');
-require('./assets/php/herencia.php');
-
+<?php
 
 session_start();
 
-$_SESSION['nombre'] = 'Jesus';
+if($_SESSION){
+
+    $nombre = $_SESSION['nombre'];
+    echo "<h1> Hola $nombre </h1>";
+
+}else{
+    echo 'Nos has iniciado sesion';
+}
+
 
 ?>
 
@@ -46,10 +51,10 @@ $_SESSION['nombre'] = 'Jesus';
     <header>
 
 
-        <h1>Pagina de inicio</h1>
+        <h1>Hola</h1>
         <p></p>
 
-        <a  href="pagina2.php"> Ir a la pagina 2 </a>
+        <a href="cerrar.php">Cerrar sesion</a>
 
     </header>
 
