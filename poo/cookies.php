@@ -1,11 +1,7 @@
 <?php
-require('./assets/php/class.php');
-require('./assets/php/herencia.php');
 
 
-session_start();
-
-$_SESSION['nombre'] = 'Jesus';
+setcookie('font-size', '30px', time() + 60 * 60, '/');
 
 ?>
 
@@ -47,11 +43,7 @@ $_SESSION['nombre'] = 'Jesus';
     <header>
 
 
-        <h1>Pagina de inicio</h1>
-        <p></p>
-
-        <a href="pagina2.php"> Ir a la pagina 2 </a>
-        <a href="cookies.php"> Cookies </a>
+        <a href="texto.php"> Texto </a>
 
     </header>
 

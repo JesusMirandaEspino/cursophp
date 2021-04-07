@@ -1,11 +1,14 @@
 <?php
-require('./assets/php/class.php');
-require('./assets/php/herencia.php');
 
 
-session_start();
+if( isset($_COOKIE['font-size']) ){
+    $tamano = $_COOKIE['font-size'];
+}else{
+    $tamano = '15px;';
+}
 
-$_SESSION['nombre'] = 'Jesus';
+
+
 
 ?>
 
@@ -38,6 +41,13 @@ $_SESSION['nombre'] = 'Jesus';
     <title></title>
 
 
+    <style>
+        p {
+            font-size: <?php echo $tamano; ?>;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -46,12 +56,15 @@ $_SESSION['nombre'] = 'Jesus';
     <!-- **************************  -->
     <header>
 
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Deleniti voluptas voluptatum unde,
+            ipsum nostrum quas consequuntur earum provident saepe debitis,
+            temporibus atque obcaecati facilis dicta, harum excepturi minima dignissimos at.
+        </p>
 
-        <h1>Pagina de inicio</h1>
-        <p></p>
 
-        <a href="pagina2.php"> Ir a la pagina 2 </a>
-        <a href="cookies.php"> Cookies </a>
+        <a href="cookies.php"> Volver </a>
+
 
     </header>
 
