@@ -14,5 +14,7 @@
     echo "Inserta valores en una tabla INSERT INTO usuarios values(null, 'Mutuelo', 'test@dom.com');";
     echo 'Muestra los valores insertados en una tabla  SELECT * FROM usuarios;';
     echo "Insertar algunos datos INSERT INTO usuarios (id, nombre  ) values( id, 'Ramo2313'  );";
+    echo "Modificar un valor almacenado donde se iguala con where para cambiarlo UPDATE usuarios SET nombre = 'SuperRamo' wHERE id = 2;";
+    
 
 ?>
