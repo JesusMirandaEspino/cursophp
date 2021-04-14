@@ -24,5 +24,7 @@
     echo 'Selecciona los valores con un limite a mostrar SELECT * FROM usuarios LIMIT 1;';
     echo 'Selecciona los valores con un limite inicial y final  a mostrar SELECT * FROM usuarios LIMIT 0, 2;';
     echo 'Selecciona los valores con un limite inicial y final  a mostrar SELECT * FROM usuarios LIMIT 0, 2;';
+    echo 'Borra usuarios con una especificacion en where   DELETE  FROM usuarios WHERE id = 2;';
+
 
 ?>  
