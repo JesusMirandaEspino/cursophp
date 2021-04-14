@@ -15,6 +15,20 @@
 
 //while(  $fila = mysql_fetch_object( $rest ) ){ echo $fila->nombre; }
 
+
+//TODO PDO
+
+try{
+    $conexion = new PDO( 'mysql:host=localhost; dbname=prueba_datos', 'root', ''  );
+    echo 'conexion realizada';
+}catch( PDOException $e)
+{
+    echo 'El error: ' . $e->getMessage();
+}
+
+
+
+
 ?>
 
 <!DOCTYPE html>
