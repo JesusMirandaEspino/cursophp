@@ -12,6 +12,9 @@
 
 // $fila = mysql_fetch_object( $rest );
 
+
+//while(  $fila = mysql_fetch_object( $rest ) ){ echo $fila->nombre; }
+
 ?>
 
 <!DOCTYPE html>
