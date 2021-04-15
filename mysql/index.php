@@ -19,7 +19,7 @@
 //TODO PDO
 
 try{
-    $conexion = new PDO( 'mysql:host=localhost; dbname=prueba_datos', 'root', ''  );
+    $conexion = new PDO( 'mysql:host=localhost; dbname=prueba_datos', 'root', '2343243242gds gdshwo pogsjg jgrt9h'  );
     echo 'conexion realizada';
 }catch( PDOException $e)
 {
