@@ -24,12 +24,16 @@ try{
 
     //prepared statement
 
-    $statement = $conexion->prepare('SELECT * FROM usuarios WHERE ID = :id');
-    $statement->execute( array(':id' => $id) );
+    $statement = $conexion->prepare('SELECT * FROM usuarios');
+    $statement->execute( );
 
-    $resultados = $statement->fetch();
+    $resultados = $statement->fetchAll();
 
-    print_r($resultados);
+foreach( $resultados as $users ){
+    echo $users['nombre'] . '<br/>' ;
+}
+
+
 
 
 }catch( PDOException $e)
