@@ -1,34 +1,35 @@
 <?php
-
+$id = $_GET['id'];
 
 // forma antigua de conectar
-
 //$conexion = mysql_connect(  'localhost', 'root', '' )  or die();
-
 // mysql_select_db('prueba', $conexion);
-
 //$rest =  mysql_query('SELECT * FROM usuarois' );
-
-
 // $fila = mysql_fetch_object( $rest );
-
-
 //while(  $fila = mysql_fetch_object( $rest ) ){ echo $fila->nombre; }
-
 
 //TODO PDO
 
 try{
     $conexion = new PDO( 'mysql:host=localhost; dbname=prueba_datos', 'root', ''  );
-    echo 'conexion realizada';
+//    echo 'conexion realizada';
 
 //$results = $conexion->query('SELECT * FROM usuarios');
+//$insertar = $conexion->query('INSERT INTO usuarios VALUES(null, "Mursi", "test4@dominio.com")');
 
-$insertar = $conexion->query('INSERT INTO usuarios VALUES(null, "Mursi", "test4@dominio.com")');
-
- /*   foreach($results as $res){
+/*   foreach($results as $res){
         print_r($res);
     }*/
+
+
+    //prepared statement
+
+    $statement = $conexion->prepare('SELECT * FROM usuarios WHERE ID = :id');
+    $statement->execute( array(':id' => $id) );
+
+    $resultados = $statement->fetch();
+
+    print_r($resultados);
 
 
 }catch( PDOException $e)
