@@ -21,6 +21,16 @@
 try{
     $conexion = new PDO( 'mysql:host=localhost; dbname=prueba_datos', 'root', ''  );
     echo 'conexion realizada';
+
+//$results = $conexion->query('SELECT * FROM usuarios');
+
+$insertar = $conexion->query('INSERT INTO usuarios VALUES(null, "Mursi", "test4@dominio.com")');
+
+ /*   foreach($results as $res){
+        print_r($res);
+    }*/
+
+
 }catch( PDOException $e)
 {
     echo 'El error: ' . $e->getMessage();
