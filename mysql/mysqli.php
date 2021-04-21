@@ -9,12 +9,17 @@ if($conectar->connect_errno){
     $result = $conectar->query( $sql );
 
     if($result->num_rows){
+/*
 
-        
         echo '<pre>';
         var_dump( $result->fetch_assoc() );
         var_dump( $result->fetch_assoc() );
         echo '</pre>';
+*/
+
+        while( $fila =  $result->fetch_assoc()  ){
+            echo $fila['ID'] . '.- ' . $fila['nombre']  . '<br/>';
+        }
 
 
     }else{
