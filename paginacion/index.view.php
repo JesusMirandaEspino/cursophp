@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/responsivo.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- **************************  -->
     <!-- **************************  -->
     <link rel="icon" type="image/png" href="">
