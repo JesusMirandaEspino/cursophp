@@ -61,12 +61,12 @@
         <section class="fila  articulos ">
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <ul>
-                        <li>1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>2.- Nam quis nibh porta, elementum mauris quis.</li>
-                        <li>3.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li>4.- Nam quis nibh porta, elementum mauris quis.</li>
-                        <li>5.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                    <ul class="list-item">
+                        <li class="item">1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li class="item">2.- Nam quis nibh porta, elementum mauris quis.</li>
+                        <li class="item">3.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <li class="item">4.- Nam quis nibh porta, elementum mauris quis.</li>
+                        <li class="item">5.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                     </ul>
                 </div>
             </div>
@@ -79,13 +79,13 @@
 
                 <div class="col-full-12">
 
-                    <ul>
-                        <li class="disabled"><a href="">&laquo;</a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">&raquo;</a></li>
+                    <ul class="btn-list">
+                        <li class="disabled btn-page"><a href="">&laquo;</a></li>
+                        <li class="active btn-page"><a href="">1</a></li>
+                        <li class="btn-page"><a href="">2</a></li>
+                        <li class="btn-page"><a href="">3</a></li>
+                        <li class="btn-page"><a href="">4</a></li>
+                        <li class="btn-page"><a href="">&raquo;</a></li>
                     </ul>
 
                 </div>
