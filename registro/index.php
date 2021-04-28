@@ -1,3 +1,10 @@
+<?php 
+
+    require('views/contenido.view.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
