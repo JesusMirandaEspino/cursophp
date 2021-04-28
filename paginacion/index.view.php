@@ -64,11 +64,9 @@
             <div class="contenedor1">
                 <div class="col-full-12">
                     <ul class="list-item">
-                        <li class="item">1.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li class="item">2.- Nam quis nibh porta, elementum mauris quis.</li>
-                        <li class="item">3.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                        <li class="item">4.- Nam quis nibh porta, elementum mauris quis.</li>
-                        <li class="item">5.- Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                        <?php foreach ($articulos as $articulo) : ?>
+                            <li class="item"> <?php echo $articulo['id'] . '.- ' . $articulo['texto'] ?> </li>
+                        <?php endforeach ?>
                     </ul>
                 </div>
             </div>
