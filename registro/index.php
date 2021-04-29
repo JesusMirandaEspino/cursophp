@@ -22,10 +22,10 @@
     <meta name="robots" content="INDEX,FOLLOW">
 <!-- **************************  -->
 <!-- **************************  -->
-    <link rel="stylesheet" href="/assets/css/all.css">
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/responsivo.css">
-    <link rel="stylesheet" href="/assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
 <!-- **************************  -->
 <!-- **************************  -->    
 <link rel="icon" type="image/png" href="">
