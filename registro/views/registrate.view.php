@@ -84,7 +84,7 @@
 
                 <article class="col-full-4  form-container">
 
-                    <form class="form-registrate">
+                    <form class="form-registrate"  action="<?php echo  htmlspecialchars( $_SERVER['PHP_SELF'] );  ?>"  method="POST" name="login" >
 
                         <div class="input-container">
 
@@ -93,7 +93,7 @@
                             </div>
 
                             <div class="input-box">
-                                <input type="text" name="" id="" placeholder="Nombre">
+                                <input type="text" name="usuario" id="" placeholder="Nombre">
                             </div>
 
                         </div>
@@ -105,7 +105,7 @@
                             </div>
 
                             <div class="input-box">
-                                <input type="password" name="" id="" placeholder="Contraseña">
+                                <input type="password" name="password" id="" placeholder="Contraseña">
                             </div>
 
 
@@ -118,11 +118,11 @@
                             </div>
 
                             <div class="input-box-repeat">
-                                <input type="password" name="" id="" placeholder="Repite Contraseña">
+                                <input type="password" name="password2" id="" placeholder="Repite la Contraseña">
                             </div>
 
                             <div class="btn-go">
-                                <i class="fas fa-arrow-right"></i>
+                                <i class="fas fa-arrow-right"  onclick="login.submit()" ></i>
                             </div>
 
                         </div>
