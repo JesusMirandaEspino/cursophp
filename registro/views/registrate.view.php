@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" href="">
     <!-- **************************  -->
     <!-- **************************  -->
-    <title>Contenido</title>
+    <title>Registrate</title>
 
 
 
@@ -43,7 +43,7 @@
         <section class="fila">
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <h1 class="title">Contenido del sitio</h1>
+                    <h1 class="title">Registrate</h1>
                 </div>
             </div>
         </section>
@@ -69,7 +69,7 @@
 
                 <div class=" col-full-4  ">
                     <div class="close-session">
-                        <a href="cerrar.php">Cerrar Sesion</a>
+
                     </div>
                 </div>
 
@@ -82,25 +82,77 @@
 
                 <div class="col-full-4"></div>
 
-                <article class="col-full-4  text-container">
+                <article class="col-full-4  form-container">
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-                        quibusdam harum? Numquam, tenetur optio? Possimus aut
-                        oluptatem vitae obcaecati iusto vel provident sed impedit
-                        facere fuga pariatur quasi, rem temporibus.
-                    </p>
+                    <form class="form-registrate">
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-                        quibusdam harum? Numquam, tenetur optio? Possimus aut
-                        oluptatem vitae obcaecati iusto vel provident sed impedit
-                        facere fuga pariatur quasi, rem temporibus.
-                    </p>
+                        <div class="input-container">
+
+                            <div class="btn-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="text" name="" id="" placeholder="Nombre">
+                            </div>
+
+                        </div>
+
+                        <div class="input-container">
+
+                            <div class="btn-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+
+                            <div class="input-box">
+                                <input type="password" name="" id="" placeholder="Contraseña">
+                            </div>
+
+
+                        </div>
+
+                        <div class="input-container">
+
+                            <div class="btn-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+
+                            <div class="input-box-repeat">
+                                <input type="password" name="" id="" placeholder="Repite Contraseña">
+                            </div>
+
+                            <div class="btn-go">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+
+                        </div>
+
+
+                    </form>
 
                 </article>
 
                 <div class="col-full-4"></div>
 
             </div>
+        </section>
+
+
+        <section class="fila">
+
+            <div class="contenendor1">
+
+                <div class="col-full-12 session">
+                    <p>¿Ya tienes cuenta?</p>
+                </div>
+
+                <div class="col-full-12 session">
+                    <a href="">Registrate</a>
+                </div>
+
+            </div>
+
+
         </section>
 
 
