@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" href="">
     <!-- **************************  -->
     <!-- **************************  -->
-    <title>Registrate</title>
+    <title>Iniciar Sesion</title>
 
 
 
@@ -43,7 +43,7 @@
         <section class="fila">
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <h1 class="title">Registrate</h1>
+                    <h1 class="title">Iniciar Sesion</h1>
                 </div>
             </div>
         </section>
@@ -84,7 +84,7 @@
 
                 <article class="col-full-4  form-container">
 
-                    <form class="form-registrate"  action="<?php echo  htmlspecialchars( $_SERVER['PHP_SELF'] );  ?>"  method="POST" name="login" >
+                    <form class="form-registrate" action="<?php echo  htmlspecialchars($_SERVER['PHP_SELF']);  ?>" method="POST" name="login">
 
                         <div class="input-container">
 
@@ -98,18 +98,7 @@
 
                         </div>
 
-                        <div class="input-container">
 
-                            <div class="btn-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
-
-                            <div class="input-box">
-                                <input type="password" name="password" id="" placeholder="Contraseña">
-                            </div>
-
-
-                        </div>
 
                         <div class="input-container">
 
@@ -118,11 +107,11 @@
                             </div>
 
                             <div class="input-box-repeat">
-                                <input type="password" name="password2" id="" placeholder="Repite la Contraseña">
+                                <input type="password" name="password" id="" placeholder="Contraseña">
                             </div>
 
                             <div class="btn-go">
-                                <i class="fas fa-arrow-right"  onclick="login.submit()" ></i>
+                                <i class="fas fa-arrow-right" onclick="login.submit()"></i>
                             </div>
 
                         </div>
@@ -143,11 +132,11 @@
             <div class="contenendor1">
 
                 <div class="col-full-12 session">
-                    <p>¿Ya tienes cuenta?</p>
+                    <p>¿No tienes cuenta?</p>
                 </div>
 
                 <div class="col-full-12 session">
-                    <a href="./login.php">Inicia Session</a>
+                    <a href="./index.php">Registrate</a>
                 </div>
 
             </div>
