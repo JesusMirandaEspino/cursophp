@@ -15,30 +15,6 @@
         echo $usuario .  $password . $password2;
 
 
-        $errores = '';
-
-        if( empty( $usuario ) || empty($password) || empty($password2) ){
-            $errores .= '<li> Por favor rellena los datos correctamente  </li>';
-        }else{
-            try{
-
-                $conexion = new PDO( 'mysql:host=localhost; dbname:login', 'root', ''  );
-
-            }catch( PDOException $e ){
-                echo "Error"  . $e->getMessage();
-            }
-
-            $statement = $conexion->prepare( ' SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1  ' );
-            $statement->execute( array( ':usuario = $usuario' ) );
-            $resultado = $statement->fetch();
-
-            if( !$resultado ){ // !$resultado
-                    $errores .= '<li> El usuario ya existe  </li>';
-            }
-
-        }
-
-
     }
 
 
