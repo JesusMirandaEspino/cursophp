@@ -84,7 +84,7 @@
 
                 <article class="col-full-4  form-container">
 
-                    <form class="form-registrate"  action="<?php echo  htmlspecialchars( $_SERVER['PHP_SELF'] );  ?>"  method="POST" name="login" >
+                    <form class="form-registrate" action="<?php echo  htmlspecialchars($_SERVER['PHP_SELF']);  ?>" method="POST" name="login">
 
                         <div class="input-container">
 
@@ -122,10 +122,19 @@
                             </div>
 
                             <div class="btn-go">
-                                <i class="fas fa-arrow-right"  onclick="login.submit()" ></i>
+                                <i class="fas fa-arrow-right" onclick="login.submit()"></i>
                             </div>
 
                         </div>
+
+
+                        <?php  if(!empty($errores)): ?>
+                            <div class="error" >
+                                <ul>
+                                    <?php  echo $errores ?>
+                                </ul>
+                            </div> 
+                        <?php  endif; ?>
 
 
                     </form>
