@@ -2,7 +2,10 @@
 
 if ( isset( $_SESSION['usuario'] ) ) {
     header('Location: index.php');
-} 
+}
+
+
+$errores = '';
 
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
     $usuario = filter_var(  strtolower( $_POST['usuario'] ), FILTER_SANITIZE_STRING );
@@ -23,10 +26,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 
 
 
-    if ($resultado !== $falso) { // !$resultado
+    if ($resultado != $falso) { // !$resultado
 
         $_SESION['usuario'] = $usuario;
         header('Location: index.php');
+    }else{
+        $errores .= '<li> Datos incorrectos  </li>';
     }
 
     
