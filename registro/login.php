@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
 if ( isset( $_SESSION['usuario'] ) ) {
     header('Location: index.php');
 }
@@ -26,10 +28,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 
 
 
-    if ($resultado != $falso) { // !$resultado
+    if ($resultado !== $falso) { // !$resultado
 
         $_SESION['usuario'] = $usuario;
-        header('Location: index.php');
+        header('Location: contenido.php');
+
     }else{
         $errores .= '<li> Datos incorrectos  </li>';
     }
