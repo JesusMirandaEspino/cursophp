@@ -90,8 +90,14 @@
                             <textarea name="texto" id="texto" placeholder="Ingresa una descripcion"></textarea>
                         </div>
 
+                        <?php if( isset($error) ): ?>
+
+                            <p> <?php  echo $error; ?> </p>
+
+                        <?php endif ?>
+
                         <div>
-                            <input type="submit"  value="Subir Foto" >
+                            <input type="submit" value="Subir Foto">
                         </div>
 
 
