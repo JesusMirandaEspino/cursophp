@@ -66,16 +66,20 @@
 
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <h2>Foto</h2>
+                    <h2>Foto: <?php if (!empty($foto['titulo'])) {
+                                    echo $foto['titulo'];
+                                } else {
+                                    echo $foto['imagen'];
+                                } ?> </h2>
                 </div>
             </div>
 
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <img src="" alt="">
+                    <img src="photo/<?php echo $foto['imagen']; ?>" alt="">
                 </div>
                 <div class="col-full-12">
-                    <p>Lorem </p>
+                    <p><?php echo $foto['texto']; ?></p>
                 </div>
                 <div class="col-full-12">
                     <a href=""><i class="fas fa-arrow-left"></i> Regresar </a>
