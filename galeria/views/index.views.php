@@ -72,23 +72,27 @@
 
 
             <div class="contenedor1">
-                <div class="col-full-3">
-                    <img src="" alt="Foto1">
-                </div>
-                <div class="col-full-3">
-                    <img src="" alt="Foto1">
-                </div>
-                <div class="col-full-3">
-                    <img src="" alt="Foto1">
-                </div>
-                <div class="col-full-3">
-                    <img src="" alt="Foto1">
-                </div>
+
+                <?php foreach ($fotos as $foto) :   ?>
+
+                    <div class="col-full-3">
+
+                        <a href="foto.php?id=<?php echo $foto['id']; ?>">
+                            <img src="photo/<?php echo $foto['imagen']; ?>" alt="Foto1">
+                        </a>
+
+
+                    </div>
+
+                <?php endforeach; ?>
+
             </div>
 
 
             <div class="contenedor1">
                 <div class="col-full-6">
+
+
 
 
                     <i class="fas fa-arrow-left"></i>
@@ -98,7 +102,7 @@
 
                 <div class="col-full-6">
 
-                    <p>Pagina siguiente</p> 
+                    <p>Pagina siguiente</p>
                     <i class="fas fa-arrow-right"></i>
 
                 </div>
