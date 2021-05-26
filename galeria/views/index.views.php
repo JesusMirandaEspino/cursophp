@@ -90,21 +90,22 @@
 
 
             <div class="contenedor1">
+
                 <div class="col-full-6">
-
-
-
-
-                    <i class="fas fa-arrow-left"></i>
-                    <p>Pagina anterior</p>
-
+                    <?php if ($pagina_actual  > 1) : ?>
+                        <a href="index.php?p=<?php echo $pagina_actual - 1; ?>"><i class="fas fa-arrow-left"></i>
+                            <p>Pagina anterior</p>
+                        </a>
+                    <?php endif; ?>
                 </div>
 
                 <div class="col-full-6">
-
-                    <p>Pagina siguiente</p>
-                    <i class="fas fa-arrow-right"></i>
-
+                    <?php if ($total_paginas  != $pagina_actual) : ?>
+                        <a href="index.php?p=<?php echo $pagina_actual + 1; ?>">
+                            <p>Pagina siguiente</p>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    <?php endif; ?>
                 </div>
 
             </div>
