@@ -12,7 +12,7 @@
             <div class="col-full-4"></div>
 
             <article class="col-full-8">
-                <h2><a href="">Titulo del articulo</a> </h2>
+                <h2>Titulo del articulo</h2>
                 <p>Fecha: 01 06 2021</p>
             </article>
 
@@ -35,20 +35,20 @@
         </div>
 
         <div class="contenedor1">
-            <div class="col-full-12">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+            <div class="col-full-4"></div>
+            <div class="col-full-7">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Veniam magnam quidem recusandae numquam necessitatibus
+                    velit aliquam blanditiis incidunt temporibus officiis!
+                    Veniam ullam minus laborum modi exercitationem
+                    amet atque mollitia eligendi.</p>
             </div>
-            <div class="col-full-12">
-                <a href="">Continuar leyendo</a>
-            </div>
+            <div class="col-full-1"></div>
+
         </div>
 
 
-        <div class="contenedor1">
-            <div class="col-full-12">
-                <?php require('paginacion.php'); ?>
-            </div>
-        </div>
+
 
     </section>
 

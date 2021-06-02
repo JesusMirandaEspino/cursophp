@@ -42,7 +42,9 @@
             <div class="contenedor1">
 
                 <div class="col-full-4">
-                    <h1>Mi Blog</h1>
+
+                    <h1><a href="<?php echo RUTA; ?>">Mi Blog</a></h1>
+
                 </div>
 
                 <div class="col-full-4">
