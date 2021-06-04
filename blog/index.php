@@ -11,9 +11,11 @@ if( !$conexion ){
     header('Location: error.php');
 }
 
-$post = obtenerPost($blog_config['post_por_pagina'], $conexion);
+$posts = obtenerPost($blog_config['post_por_pagina'], $conexion);
 
-
+if (!$posts) {
+    header('Location: error.php');
+}
 
 require('views/index.view.php');
 
