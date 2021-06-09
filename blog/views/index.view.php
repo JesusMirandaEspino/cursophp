@@ -15,7 +15,7 @@
 
                 <article class="col-full-8">
                     <h2><a href=""><?php echo $post['titulo']; ?></a> </h2>
-                    <p><?php echo $post['fecha']; ?></p>
+                    <p><?php echo fecha($post['fecha']); ?></p>
                 </article>
 
                 <div class="col-full-1"></div>
