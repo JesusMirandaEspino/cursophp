@@ -33,8 +33,18 @@ function obtenerPost( $post_por_pagina, $conexion )
 
 }
 
+function id_articulo( $id ){
+    return (int)limpiardatos($id);
+}
 
 
+function obtener_post_por_id( $conexion, $id ){
+    $resultado = $conexion->query(" SELECT * FROM articulos WHERE id = $id LIMIT 1");
+    $resultado = $resultado->fetchAll();
+
+    return ( $resultado ) ? $resultado : false;
+
+}
 
 
 ?>
