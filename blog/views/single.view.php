@@ -12,8 +12,8 @@
             <div class="col-full-4"></div>
 
             <article class="col-full-8">
-                <h2>Titulo del articulo</h2>
-                <p>Fecha: 01 06 2021</p>
+                <h2><?php echo $post['titulo'];  ?></h2>
+                <p><?php echo fecha($post['fecha'] );  ?></p>
             </article>
 
             <div class="col-full-1"></div>
@@ -26,7 +26,7 @@
 
             <div class="col-full-7">
                 <a href="">
-                    <img src="<?php echo  RUTA;  ?>/assets/update/1.jpg" alt="no image">
+                    <img src="<?php echo  RUTA;  ?>/assets/update/<?php echo $post['thumb'];?>" alt="<?php echo $post['titulo'];?>">
                 </a>
             </div>
 
@@ -37,11 +37,7 @@
         <div class="contenedor1">
             <div class="col-full-4"></div>
             <div class="col-full-7">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veniam magnam quidem recusandae numquam necessitatibus
-                    velit aliquam blanditiis incidunt temporibus officiis!
-                    Veniam ullam minus laborum modi exercitationem
-                    amet atque mollitia eligendi.</p>
+                <p><?php echo $post['texto'];?></p>
             </div>
             <div class="col-full-1"></div>
 
