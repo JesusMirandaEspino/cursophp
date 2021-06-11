@@ -37,7 +37,7 @@
         <div class="contenedor1">
             <div class="col-full-4"></div>
             <div class="col-full-7">
-                <p><?php echo $post['texto'];?></p>
+                <p><?php echo nl2br( $post['texto']);?></p>
             </div>
             <div class="col-full-1"></div>
 
