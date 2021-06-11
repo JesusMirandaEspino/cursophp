@@ -49,7 +49,7 @@
 
                 <div class="col-full-4">
                     <form action="<?php echo RUTA;  ?>/buscar.php" method="get">
-                        <input type="text" name="nusqueda" id="" placeholder="Buscar">
+                        <input type="text" name="busqueda" id="" placeholder="Buscar">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
