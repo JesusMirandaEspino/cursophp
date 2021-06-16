@@ -26,7 +26,7 @@
 
             <div class="col-full-7">
                 <a href="">
-                    <img src="<?php echo  RUTA;  ?>/assets/update/<?php echo $post['thumb'];?>" alt="<?php echo $post['titulo'];?>">
+                    <img src="<?php echo   'http://localhost/cursophp/blog';  ?>/assets/update/<?php echo $post['thumb'];?>" alt="<?php echo $post['titulo'];?>">
                 </a>
             </div>
 

@@ -1,5 +1,5 @@
-<?php require('config.php');  ?>
-
+<?php require('config.php');   ?>
+        
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,7 +13,7 @@
     <meta name="author" content="Jesus Miranda">
     <!-- **************************  -->
     <!-- **************************  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun--scale=1.0, minimum--scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="robots" content="INDEX,FOLLOW">
     <!-- **************************  -->
     <!-- **************************  -->

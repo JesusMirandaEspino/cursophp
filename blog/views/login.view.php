@@ -11,7 +11,7 @@
 
 
 
-    <form class="contenedor1" action=" <?php echo  htmlspecialchars($_SERVER['PHP_SELF']); ?> ">
+    <form class="contenedor1"  method="post" action="<?php echo   htmlspecialchars($_SERVER['PHP_SELF']);?> ">
 
         <div class="col-full-12">
             <label for="usuario">Usuario</label>
