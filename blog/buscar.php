@@ -32,7 +32,7 @@ if(  $_SERVER[ 'REQUEST_METHOD']  == 'GET'  && !empty($_GET['busqueda'] )){
     }    
 
 }else{
-    header( 'Location: ' . RUTA . 'index.php' );
+    header( 'Location: ' . 'http://localhost/cursophp/blog/' . 'index.php' );
 }
 
 require( 'views/buscar.view.php' );

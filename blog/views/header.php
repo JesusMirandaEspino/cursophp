@@ -45,12 +45,12 @@
 
                 <div class="col-full-4">
 
-                    <h1><a href="<?php echo RUTA; ?>">Mi Blog</a></h1>
+                    <h1><a href="<?php echo 'http://localhost/cursophp/blog/'; ?>">Mi Blog</a></h1>
 
                 </div>
 
                 <div class="col-full-4">
-                    <form action="<?php echo RUTA;  ?>/buscar.php" method="get">
+                    <form action="<?php echo 'http://localhost/cursophp/blog/';  ?>/buscar.php" method="get">
                         <input type="text" name="busqueda" id="" placeholder="Buscar">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>

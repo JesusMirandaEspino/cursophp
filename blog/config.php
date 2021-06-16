@@ -1,6 +1,6 @@
 <?php
 
-    define('RUTA', 'http://localhost/cursophp/blog/'  );
+
 
     $bd_config = array(
         'bd' => 'blog',
