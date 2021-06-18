@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     if( $usuario == $blog_admin['user']  &&  $password ==  $blog_admin['password']  ){
-        $_SESSION['admin'] == $blog_admin['user'];
+        $_SESSION['admin'] = $blog_admin['user'];
         header('Location: http://localhost/cursophp/blog/admin');
     }
 

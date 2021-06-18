@@ -67,7 +67,12 @@ function numero_paginas( $post_por_pagina, $conexion  ){
     $numeros_paginas = ceil($total_post / $post_por_pagina);
 
     return $numeros_paginas;
+}
 
+function comprobarSesion(){
+    if( !isset( $_SESSION['admin'] ) ){
+        header('Location: http://localhost/cursophp/blog/');
+    }
 }
 
 

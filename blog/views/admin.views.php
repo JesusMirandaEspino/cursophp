@@ -94,6 +94,22 @@
         </section>
 
 
+
+        <section class="fila">
+            <div class="contenedor1">
+                <div class="col-full-6">
+                    <a href="nuevo.php">Nuevo Post</a>
+                </div>
+                <div class="col-full-1">
+                </div>
+                <div class="col-full-5">
+                    <a href="nuevo.php">Cerrar Sesion</a>
+                </div>
+            </div>
+        </section>
+
+
+
         <?php foreach ($posts as $post) :  ?>
 
             <section class="fila">
@@ -103,15 +119,16 @@
 
                     <div class="col-full-12">
 
+                        <h1><?php echo  $post['id'] .  '.-  ' . $post['titulo']; ?></h1>
 
                     </div>
 
 
                     <div class="col-full-12">
 
-                        <a href="">Editar</a>
-                        <a href="">Ver</a>
-                        <a href="">Borrar</a>
+                        <a href="editar.php?id=<?php echo $post['id']; ?>">Editar</a>
+                        <a href="../single.php?id=<?php echo $post['id']; ?>">Ver</a>
+                        <a href="borrar.php?id=<?php echo $post['id']; ?>">Borrar</a>
 
                     </div>
 
