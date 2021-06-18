@@ -110,12 +110,17 @@
             </div>
 
             <div class="contenedor1">
-
                 <div class="col-full-12">
-                    <textarea name="texto"></textarea>
+                    <textarea name="texto" id="texto"></textarea>
                 </div>
             </div>
 
+
+            <div class="contenedor1">
+                <div class="col-full-12">
+                    <input type="file" name="thumb" id="thumb">
+                </div>
+            </div>
 
             <div class="contenedor1">
                 <div class="col-full-12">
