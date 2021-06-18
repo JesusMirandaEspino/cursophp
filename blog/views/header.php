@@ -1,4 +1,6 @@
-<?php require('config.php');   ?>
+<?php 
+
+?>
         
 <!DOCTYPE html>
 <html lang="es">

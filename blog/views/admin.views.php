@@ -1,8 +1,4 @@
-<?php session_start();
-
-require('../config.php');
-require('../function.php');
-
+<?php
 
 ?>
 
@@ -129,7 +125,7 @@ require('../function.php');
         <section class="fila">
             <div class="contenedor1">
                 <div class="col-full-12">
-                    <?php require('paginacion.php'); ?>
+                    <?php require('../paginacion.php'); ?>
                 </div>
             </div>
         </section>
