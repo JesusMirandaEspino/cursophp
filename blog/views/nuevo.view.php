@@ -17,10 +17,10 @@
     <!-- **************************  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/all.css">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/responsivo.css">
-    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <link rel="stylesheet" href="../assets/css/all.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/responsivo.css">
+    <link rel="stylesheet" href="../assets/css/estilos.css">
     <!-- **************************  -->
     <!-- **************************  -->
     <link rel="icon" type="image/png" href="">
@@ -73,3 +73,66 @@
         </section>
 
     </header>
+
+
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <main>
+
+
+        <form enctype="multipart/form-data" method="post" action="<?php echo   htmlspecialchars($_SERVER['PHP_SELF']); ?>" class=" fila">
+
+            <div class="contenedor1">
+
+
+                <div class="col-full-12">
+                    <label for="titulo">Titulo</label>
+                </div>
+
+                <div class="col-full-12">
+                    <input type="text" name="titulo" id="titulo" placeholder="Titulo">
+                </div>
+
+            </div>
+
+
+            <div class="contenedor1">
+
+                <div class="col-full-12">
+                    <label for="extracto">Extracto de articulo</label>
+                </div>
+
+                <div class="col-full-12">
+                    <input type="text" name="extracto" id="extracto" placeholder="Extracto">
+                </div>
+
+
+            </div>
+
+            <div class="contenedor1">
+
+                <div class="col-full-12">
+                    <textarea name="texto"></textarea>
+                </div>
+            </div>
+
+
+            <div class="contenedor1">
+                <div class="col-full-12">
+                    <input type="submit" value="Crear Articulo">
+                </div>
+            </div>
+
+        </form>
+
+
+
+
+
+    </main>
+
+
+
+
+
+    <?php require('footer.php'); ?>

@@ -22,9 +22,8 @@ if (!$posts) {
 }
 
 
-require('../views/admin.views.php');
+require('../views/admin.view.php');
 
-echo 'hola';
 
 
 ?>
