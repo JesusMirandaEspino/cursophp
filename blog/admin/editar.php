@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $extracto = limpiardatos($_POST['extracto']);
     $texto = $_POST['titulo'];
     $id = limpiardatos($_POST['id']);
-    $thumb_guardada = $_FILES['thumb-guardada'];
+    $thumb_guardada = $_POST['thumb-guardada'];
     $thumb = $_FILES['thumb'];
 
     if( empty( $thumb['name'] ) ){
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 
-    $statement = $conexion->prepare(' INSERT  articulos  SET  titulo = :titulo,  extracto = :extracto,  texto = :texto,  thumb = :thumb   WHERE id = :id ');
+    $statement = $conexion->prepare(' UPDATE  articulos  SET  titulo = :titulo,  extracto = :extracto,  texto = :texto,  thumb = :thumb   WHERE id = :id ');
 
     $statement->execute(array(
         ':titulo' => $titulo,
