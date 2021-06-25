@@ -5,7 +5,7 @@ const loader = document.querySelector('#loader');
 
 btn.addEventListener( 'click', () => {
     const peticion = new XMLHttpRequest(); 
-    peticion.open( 'GET', 'http://www.json-generator.com/api/json/get/cfdXeSRPfS?indent=2' );
+    peticion.open( 'GET', '../php/usuarios.php' );
 
     loader.classList.add('active');
 
