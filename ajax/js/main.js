@@ -5,12 +5,12 @@ const loader = document.querySelector('#loader');
 
 btn.addEventListener( 'click', () => {
     const peticion = new XMLHttpRequest(); 
-    peticion.open( 'GET', '../php/usuarios.php' );
+    peticion.open( 'GET', './php/leerDatos.php' );
 
     loader.classList.add('active');
 
     peticion.onload = () => {
-        const datos = JSON.parse( peticion.response );
+        let datos = JSON.parse( peticion.responseText );
 
 
         for( let i = 0;  i < 10; i++){
