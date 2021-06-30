@@ -29,7 +29,7 @@
 				<input type="text" name="edad" id="edad" placeholder="Edad">
 				<input type="text" name="pais" id="pais" placeholder="Pais">
 				<input type="email" name="correo" id="correo" placeholder="Correo">
-				<button type="submit" class="btn">Agregar</button>
+				<button type="submit" class="btn"   id="agregar">Agregar</button>
 			</form>
 			<div class="error_box" id="error_box">
 				<p>Se ha producido un error.</p>
