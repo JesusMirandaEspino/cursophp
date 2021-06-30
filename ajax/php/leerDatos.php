@@ -31,8 +31,7 @@ function conexion()
         echo json_encode($respuesta);
     } catch (PDOException $e) {
         $respuesta = ['Error' => true];
-        echo 'Error ' . $e;
-        die();
+
     }
 }
 
