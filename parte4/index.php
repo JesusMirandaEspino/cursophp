@@ -1,7 +1,14 @@
 <?php
 
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $port = '80';
+    $db = 'quiz';
 
+    $conn = mysqli_connect( $host, $user,  $pass, $db) or die('Error al conectar a la base de datos');
 
+    echo 'conexion existosa';
 
 ?>
 
@@ -31,7 +38,7 @@
     <link rel="icon" type="image/png" href="">
     <!-- **************************  -->
     <!-- **************************  -->
-    <title></title>
+    <title>My SQL Connect</title>
 
 
 </head>
