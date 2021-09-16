@@ -1,14 +1,35 @@
 <?php
 
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $port = '80';
-    $db = 'quiz';
+require_once( './assets/php/connect.php' );
 
-    $conn = mysqli_connect( $host, $user,  $pass, $db) or die('Error al conectar a la base de datos');
 
-    echo 'conexion existosa';
+    $pregunta = '¿Cual es la capital de España';
+
+    $op1 = 'Barcelona';
+    $op2 = 'Madrid';
+    $op3 = 'Caracas';
+    $op4 = 'Valladolid';
+
+    $res = '2';
+
+    $examen = 'GEO01';
+
+
+    // armar el query
+
+
+    $q = "INSERT INTO preguntas ( id, pregunta, op1, op2, op3, op4, buena, examen ) ";
+    $q.= "VALUES( 0, '".$pregunta."','".$op1."','". $op2."','".$op3."','" . $op4."' , '" . $res."' , '" . $examen. "')";
+
+    $res = mysqli_query( $conn, $q );
+
+    if( $res ){
+        echo 'Registro insertado correctamente' . '<br/>'   ;
+    }else{
+        echo 'Error al tratar de insertar el registro';
+    }
+
+
 
 ?>
 
@@ -58,7 +79,8 @@
 
                 <div class="col-full-12"  >
 
-            
+
+
                 </div>
 
                 <div class="col-full-12"  >
