@@ -1,10 +1,5 @@
 <?php
 
-    if( isset($_REQUEST['politica-cookies']) ){
-        $caducidad = time() + ( 60 * 60 * 24 * 365 );
-
-        setcookie( 'politica', '1', $caducidad );
-    }
 
 
 ?>
@@ -48,10 +43,7 @@
     <header>
 
 
-    <?php 
-    if( !isset( $_REQUEST[ 'politica-cookies' ] ) && !isset( $_COOKIE['politica'] )  ): 
-    ?>
-
+    
         <section  class="fila" >
 
             <div class="contenedor1" >
@@ -72,10 +64,7 @@
             
         </section> 
             
- 
 
-
-    <?php  endif; ?>
 
 
 
