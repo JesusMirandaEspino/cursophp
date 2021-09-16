@@ -2,6 +2,7 @@
 
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -48,16 +49,13 @@
 
             <div class="contenedor1" >
 
-                <div class="col-full-12" id="galletas1" >
+                <div class="col-full-12"  >
 
-                    <p> Esta pagina utiliza cookies, para obtener datos de navegacion. Si continuas, consideramos que estas de acuerdo </p>
-                    <a href="./politicas-cookies.php"> Mas Informacion </a>
-                    <button type=""  id="aceptar">Aceptar</button>
             
                 </div>
 
-                <div class="col-full-12" id="galletas2"  onmouseover="document.getElementById(galletas1)" >
-                    <p>Politicas de cookies</p>
+                <div class="col-full-12"  >
+
                 </div>
                 
             </div>
@@ -84,17 +82,6 @@
 
 
     </footer>
-
-    <script >
-
-        window.onload = function (){
-            document.getElementById('aceptar').onclick = function () {
-                window.location='?politica-cookies=acepto';
-            }
-        }
-
-
-    </script>
 
     <script src="assets/js/app.js"></script>
 
