@@ -3,12 +3,12 @@
 require_once( './assets/php/connect.php' );
 
 
-    $pregunta = '¿Cual es la capital de Argentina';
+    $pregunta = '¿Cual es la capital de Mexico';
 
-    $op1 = 'Bogota';
+    $op1 = 'Monterrey';
     $op2 = 'Lima';
     $op3 = 'Buenos Aires';
-    $op4 = 'Los Angeles';
+    $op4 = 'Distrito Federal';
 
     $res = '3';
 
@@ -29,7 +29,7 @@ require_once( './assets/php/connect.php' );
         echo 'Error al tratar de insertar el registro';
     }
 
-
+    /*  comentado para evitar borrar
     $q = "DELETE FROM preguntas WHERE id = 2";
     $res = mysqli_query($conn, $q);
 
@@ -38,8 +38,16 @@ require_once( './assets/php/connect.php' );
     } else {
         echo 'Error al tratar de borrar el registro 2';
     }
+*/
 
+    $q = "UPDATE preguntas set op1 = 'Estado de Mexico' WHERE id = 7";
+    $res = mysqli_query($conn, $q);
 
+    if ($res) {
+        echo 'Registro correctamente cambiado' . '<br/>';
+    } else {
+        echo 'Error al tratar de modificar registro';
+    }
 ?>
 
 <!DOCTYPE html>
