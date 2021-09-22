@@ -1,7 +1,11 @@
 <?php
 
-require_once( './assets/php/connect.php' );
+require_once('./assets/php/connect.php');
 
+$td1 = '<td>';
+$td2 = '</td>';
+
+/*  comentado para evitar modificar la base de datos
 
     $pregunta = '¿Cual es la capital de Mexico';
 
@@ -29,7 +33,7 @@ require_once( './assets/php/connect.php' );
         echo 'Error al tratar de insertar el registro';
     }
 
-    /*  comentado para evitar borrar
+    
     $q = "DELETE FROM preguntas WHERE id = 2";
     $res = mysqli_query($conn, $q);
 
@@ -38,7 +42,7 @@ require_once( './assets/php/connect.php' );
     } else {
         echo 'Error al tratar de borrar el registro 2';
     }
-*/
+
 
     $q = "UPDATE preguntas set op1 = 'Estado de Mexico' WHERE id = 7";
     $res = mysqli_query($conn, $q);
@@ -48,6 +52,19 @@ require_once( './assets/php/connect.php' );
     } else {
         echo 'Error al tratar de modificar registro';
     }
+
+*/
+
+
+$q = "SELECT * FROM  preguntas";
+
+$resp = $conn->query( $q );
+
+
+$result = $resp->fetchAll();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -89,25 +106,45 @@ require_once( './assets/php/connect.php' );
     <header>
 
 
-    
-        <section  class="fila" >
 
-            <div class="contenedor1" >
+        <section class="fila">
 
-                <div class="col-full-12"  >
+            <div class="contenedor1">
 
+                <div class="col-full-12">
 
+                        <?php
+
+                            echo '<table>';
+
+                            foreach($result as $data ){
+
+                                echo '<tr>';
+                                    echo $td1 .  $data["pregunta"]   .  $td2;
+                                    echo $td1 .  $data["op1"]   .   $td2;
+                                    echo $td1 .  $data["op2"]   .   $td2;
+                                    echo $td1 .  $data["op3"]   .   $td2;
+                                    echo $td1 .  $data["op4"]   .   $td2;
+                                    echo $td1 .  $data["buena"]   .   $td2;
+                                    echo $td1 .  $data["examen"]   .   $td2;
+                                echo '</tr>';
+
+                                }
+
+                            echo '</table>';
+
+                        ?>
 
                 </div>
 
-                <div class="col-full-12"  >
+                <div class="col-full-12">
 
                 </div>
-                
+
             </div>
-            
-        </section> 
-            
+
+        </section>
+
 
 
 
