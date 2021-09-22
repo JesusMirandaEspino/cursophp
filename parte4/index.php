@@ -3,14 +3,14 @@
 require_once( './assets/php/connect.php' );
 
 
-    $pregunta = '¿Cual es la capital de España';
+    $pregunta = '¿Cual es la capital de Argentina';
 
-    $op1 = 'Barcelona';
-    $op2 = 'Madrid';
-    $op3 = 'Caracas';
-    $op4 = 'Valladolid';
+    $op1 = 'Bogota';
+    $op2 = 'Lima';
+    $op3 = 'Buenos Aires';
+    $op4 = 'Los Angeles';
 
-    $res = '2';
+    $res = '3';
 
     $examen = 'GEO01';
 
@@ -29,6 +29,15 @@ require_once( './assets/php/connect.php' );
         echo 'Error al tratar de insertar el registro';
     }
 
+
+    $q = "DELETE FROM preguntas WHERE id = 2";
+    $res = mysqli_query($conn, $q);
+
+    if ($res) {
+        echo 'Registro elimino correctamente el registro 2' . '<br/>';
+    } else {
+        echo 'Error al tratar de borrar el registro 2';
+    }
 
 
 ?>
