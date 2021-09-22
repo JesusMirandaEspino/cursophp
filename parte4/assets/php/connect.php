@@ -11,11 +11,12 @@
 
         $conn = new PDO('mysql:host=localhost;dbname=quiz', $user, $pass);
         echo 'conexion existosa' . '<br/>';
+        
 
     }catch(PDOException $e){
 
-        echo 'Erro al conectar a la base de datos' . $e->getMessage();
-        
+        echo 'Error al conectar a la base de datos' . $e->getMessage();
+
     }
 
 

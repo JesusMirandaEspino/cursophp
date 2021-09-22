@@ -1,68 +1,5 @@
 <?php
 
-require_once('./assets/php/connect.php');
-
-$td1 = '<td>';
-$td2 = '</td>';
-
-/*  comentado para evitar modificar la base de datos
-
-    $pregunta = '¿Cual es la capital de Mexico';
-
-    $op1 = 'Monterrey';
-    $op2 = 'Lima';
-    $op3 = 'Buenos Aires';
-    $op4 = 'Distrito Federal';
-
-    $res = '3';
-
-    $examen = 'GEO01';
-
-
-    // armar el query
-
-
-    $q = "INSERT INTO preguntas ( id, pregunta, op1, op2, op3, op4, buena, examen ) ";
-    $q.= "VALUES( 0, '".$pregunta."','".$op1."','". $op2."','".$op3."','" . $op4."' , '" . $res."' , '" . $examen. "')";
-
-    $res = mysqli_query( $conn, $q );
-
-    if( $res ){
-        echo 'Registro insertado correctamente' . '<br/>'   ;
-    }else{
-        echo 'Error al tratar de insertar el registro';
-    }
-
-    
-    $q = "DELETE FROM preguntas WHERE id = 2";
-    $res = mysqli_query($conn, $q);
-
-    if ($res) {
-        echo 'Registro elimino correctamente el registro 2' . '<br/>';
-    } else {
-        echo 'Error al tratar de borrar el registro 2';
-    }
-
-
-    $q = "UPDATE preguntas set op1 = 'Estado de Mexico' WHERE id = 7";
-    $res = mysqli_query($conn, $q);
-
-    if ($res) {
-        echo 'Registro correctamente cambiado' . '<br/>';
-    } else {
-        echo 'Error al tratar de modificar registro';
-    }
-
-*/
-
-
-$q = "SELECT * FROM  preguntas";
-
-$resp = $conn->query( $q );
-
-
-$result = $resp->fetchAll();
-
 
 
 ?>
@@ -113,27 +50,7 @@ $result = $resp->fetchAll();
 
                 <div class="col-full-12">
 
-                        <?php
 
-                            echo '<table>';
-
-                            foreach($result as $data ){
-
-                                echo '<tr>';
-                                    echo $td1 .  $data["pregunta"]   .  $td2;
-                                    echo $td1 .  $data["op1"]   .   $td2;
-                                    echo $td1 .  $data["op2"]   .   $td2;
-                                    echo $td1 .  $data["op3"]   .   $td2;
-                                    echo $td1 .  $data["op4"]   .   $td2;
-                                    echo $td1 .  $data["buena"]   .   $td2;
-                                    echo $td1 .  $data["examen"]   .   $td2;
-                                echo '</tr>';
-
-                                }
-
-                            echo '</table>';
-
-                        ?>
 
                 </div>
 
