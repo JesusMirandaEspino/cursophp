@@ -1,5 +1,16 @@
 <?php
 
+    $dir = opendir( './assets/img/photos/' );
+    $ren = 3;
+    $i = 0;
+
+    function  validaFoto( $img ){
+        $patron = "%\.(gif|jpe?g|png)$%i";
+        $bandera = preg_match($patron, $img ) == 1 ? true : false ;
+
+        return $bandera;
+    }
+
 
 
 ?>
@@ -30,7 +41,7 @@
     <link rel="icon" type="image/png" href="">
     <!-- **************************  -->
     <!-- **************************  -->
-    <title>My SQL Connect</title>
+    <title>Imagenes</title>
 
 
 </head>
@@ -49,6 +60,45 @@
             <div class="contenedor1">
 
                 <div class="col-full-12">
+
+                <?php
+
+                    if ($dir) {
+                        
+                        echo "<table border='1'> ";
+                            echo '<tr>';
+
+                            while ( $foto=readdir( $dir )  ) {
+
+                                if ( $foto != "." && $foto != ".." ) {
+
+                                    if ( $i == $ren ) {
+                                        $i = 0;
+                                        echo '</tr>';
+                                        echo '<tr>';
+                                    }
+
+                                    $i++;
+
+                                    echo '<td>';
+                                    echo "<img src='fotos/" . $foto . "' width='100px' height='100px' />";
+                                    echo '</td>';                          # code...
+                                }
+
+
+                            }
+
+
+                            echo '</tr>';
+                        echo '</table>';
+
+                    } else {
+                        echo 'Error al abrir la carpeta de fotos';
+                    }
+
+
+                ?>
+
 
 
 
@@ -72,6 +122,9 @@
     <!-- **************************  -->
     <!-- **************************  -->
     <main>
+
+
+
 
     </main>
 
