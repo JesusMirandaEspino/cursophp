@@ -2,8 +2,34 @@
 
     if( is_uploaded_file( $_FILES['foto']['tmp_name'] ) ){
         $nombre = 'foto'.date( 'YmdHis' );
-        copy($_FILES['foto']['tmp_name'], 'assets/img/photos/'.$nombre.'.png' );
+        $errores_array = array();
+        $fileTmp = $_FILES['foto']['tmp_name'];
+        $fileName = $_FILES['foto']['name'];
+        $fileSize = $_FILES['foto']['size'];
+        $fileType = $_FILES['foto']['type'];
+        $fileExt = strtolower( end( explode( '.', $fileName ) ) );
+
+        $extensiones = array( 'jpg', 'png', 'jpeg' );
+
+        if( !in_array( $fileExt, $extensiones ) ){
+            $errores_array[] = 'Extensiones de archivo no permitidas';
+        }
+
+        if( $fileSize > 1024*1000*2 ){
+            $errores_array[] = 'El archivo excede el tamaño permitido ';
+        }
+
+        if ( file_exists('assets/img/photos/' . $fileName ) ) {
+            $errores_array[] = 'El archivo ya existe ';
+        }
+
+        if( empty( $errores_array ) ){
+            copy($_FILES['foto']['tmp_name'], 'assets/img/photos/' . $nombre . '.png');
+        }
+
+        
     }else{
+        print_r($errores_array  );
         echo 'Error al cargar el archivo';
     }
 
