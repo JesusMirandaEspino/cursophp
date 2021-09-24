@@ -119,7 +119,7 @@
                                     echo $tdc;
 
                                     echo '<td>';
-                                    echo '<button>Borrar</button>';
+                                    echo "<a  href='index.php?foto=".$foto . " '> Borrar  </a>";
                                     echo $tdc;
 
                                     echo '<td>';
