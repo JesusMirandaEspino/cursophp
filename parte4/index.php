@@ -1,8 +1,9 @@
 <?php
 
     $dir = opendir( './assets/img/photos/' );
-    $ren = 3;
+    $ren = 1;
     $i = 0;
+    $tr = '</tr>';
 
     function  validaFoto( $img ){
         $patron = "%\.(gif|jpe?g|png)$%i";
@@ -67,6 +68,15 @@
                         
                         echo "<table border='1'> ";
                             echo '<tr>';
+                            echo '<th> Imagen </th>';
+                            echo '<th> Archivo KB </th>';
+                            echo '<th> Ancho KB</th>';
+                            echo '<th> Alto KB</th>';
+                            echo '<th> Borrar </th>';
+                            echo '<th> Optimizar </th>';
+                            echo  $tr;
+
+                            echo '<tr>';
 
                             while ( $foto=readdir( $dir )  ) {
 
@@ -74,15 +84,48 @@
 
                                     if ( $i == $ren ) {
                                         $i = 0;
-                                        echo '</tr>';
+                                        echo  $tr;
                                         echo '<tr>';
                                     }
 
                                     $i++;
 
+                                    $archivo = './assets/img/photos/'.$foto;
+                                    $info = getimagesize( $archivo );
+                                    $tamano = filesize( $archivo );
+                                    $td = '<td>';
+                                    $tdc = '</td>';
+                                    $kb = ' kb  ';
+
                                     echo '<td>';
                                     echo "<img src='fotos/" . $foto . "' width='100px' height='100px' />";
-                                    echo '</td>';                          # code...
+                                    echo  $tdc;
+
+                                    echo '<td>';
+                                    echo $foto;
+                                    echo $tdc;
+
+
+                                    echo '<td>';
+                                    echo number_format($info[0]/1024, 2) ;
+                                    echo $tdc;
+
+                                    echo '<td>';
+                                    echo number_format($info[1]/1024, 2) ;
+                                    echo $tdc;
+
+                                    echo '<td>';
+                                    echo number_format($tamano/1024, 2) .  '  ';
+                                    echo $tdc;
+
+                                    echo '<td>';
+                                    echo '<button>Borrar</button>';
+                                    echo $tdc;
+
+                                    echo '<td>';
+                                    echo '<button>Optimizar</button>';
+                                    echo $tdc;    
+
                                 }
 
 
