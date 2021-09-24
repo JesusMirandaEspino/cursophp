@@ -1,17 +1,11 @@
 <?php
 
-    $dir = opendir( './assets/img/photos/' );
-    $ren = 1;
-    $i = 0;
-    $tr = '</tr>';
-
-    function  validaFoto( $img ){
-        $patron = "%\.(gif|jpe?g|png)$%i";
-        $bandera = preg_match($patron, $img ) == 1 ? true : false ;
-
-        return $bandera;
+    if( is_uploaded_file( $_FILES['foto']['tmp_name'] ) ){
+        $nombre = 'foto'.date( 'YmdHis' );
+        copy($_FILES['foto']['tmp_name'], 'assets/img/photos/'.$nombre.'.png' );
+    }else{
+        echo 'Error al cargar el archivo';
     }
-
 
 
 ?>
@@ -62,88 +56,14 @@
 
                 <div class="col-full-12">
 
-                <?php
+                    <form  enctype="multipart/form-data" action="index.php" method="POST" >
+                
+                        <label for="foto">Subir foto</label>
+                        <input type="file" name="foto"  id="foto"  >
 
-                    if ($dir) {
-                        
-                        echo "<table border='1'> ";
-                            echo '<tr>';
-                            echo '<th> Imagen </th>';
-                            echo '<th> Archivo KB </th>';
-                            echo '<th> Ancho KB</th>';
-                            echo '<th> Alto KB</th>';
-                            echo '<th> Borrar </th>';
-                            echo '<th> Optimizar </th>';
-                            echo  $tr;
-
-                            echo '<tr>';
-
-                            while ( $foto=readdir( $dir )  ) {
-
-                                if ( $foto != "." && $foto != ".." ) {
-
-                                    if ( $i == $ren ) {
-                                        $i = 0;
-                                        echo  $tr;
-                                        echo '<tr>';
-                                    }
-
-                                    $i++;
-
-                                    $archivo = './assets/img/photos/'.$foto;
-                                    $info = getimagesize( $archivo );
-                                    $tamano = filesize( $archivo );
-                                    $td = '<td>';
-                                    $tdc = '</td>';
-                                    $kb = ' kb  ';
-
-                                    echo '<td>';
-                                    echo "<img src='fotos/" . $foto . "' width='100px' height='100px' />";
-                                    echo  $tdc;
-
-                                    echo '<td>';
-                                    echo $foto;
-                                    echo $tdc;
-
-
-                                    echo '<td>';
-                                    echo number_format($info[0]/1024, 2) ;
-                                    echo $tdc;
-
-                                    echo '<td>';
-                                    echo number_format($info[1]/1024, 2) ;
-                                    echo $tdc;
-
-                                    echo '<td>';
-                                    echo number_format($tamano/1024, 2) .  '  ';
-                                    echo $tdc;
-
-                                    echo '<td>';
-                                    echo "<a  href='index.php?foto=".$foto . " '> Borrar  </a>";
-                                    echo $tdc;
-
-                                    echo '<td>';
-                                    echo '<button>Optimizar</button>';
-                                    echo $tdc;    
-
-                                }
-
-
-                            }
-
-
-                            echo '</tr>';
-                        echo '</table>';
-
-                    } else {
-                        echo 'Error al abrir la carpeta de fotos';
-                    }
-
-
-                ?>
-
-
-
+                        <input type="submit" value="Enviar">
+                
+                    </form>
 
                 </div>
 
