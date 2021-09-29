@@ -34,6 +34,27 @@
     }
 
 
+$img = @imagecreatefromjpeg( './assets/img/photos/1.png' );
+
+
+
+if ( !$img  ) {
+    $img = imagecreatetruecolor( 200, 100 );
+    $color1 = imagecolorallocate( $img, 255, 255, 0 );
+    $color2 = imagecolorallocate( $img, 255, 255, 255 );
+
+    imagefilledrectangle(  $img, 0, 0, 200, 100, $color1 );
+    imagestring( $img, 3, 10, 10, 'No existe la imagen', $color2  );
+
+    header('Contet-type: image/png');
+
+    imagepng(  $img  );
+
+    imagedestroy( $img );
+
+}
+
+
 
 ?>
 
