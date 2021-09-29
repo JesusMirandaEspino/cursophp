@@ -1,38 +1,37 @@
 <?php
 
-    if( isset( $_FILES['archivos'] ) ){
-        $msg = '';
+    if( is_uploaded_file( $_FILES['foto']['tmp_name'] ) ){
+        $nombre = 'foto'.date( 'YmdHis' );
+        $errores_array = array();
+        $fileTmp = $_FILES['foto']['tmp_name'];
+        $fileName = $_FILES['foto']['name'];
+        $fileSize = $_FILES['foto']['size'];
+        $fileType = $_FILES['foto']['type'];
+        $fileExt = strtolower( end( explode( '.', $fileName ) ) );
 
-        for ($i=0; $i < count($_FILES['archivos']['name']); $i++) { 
-            $archivo = $_FILES['archivos'];
-            $nombre = $archivo['name'][$i];
-            $tmp = $archivo['tmp_name'][$i];
-            $size = $archivo['size'][$i];
-            $tipo = $archivo['type'][$i];
-            $dim = getimagesize( $tmp );
-            $w = $dim[0];
-            $h = $dim[1];
-            $carpeta = 'assets/img/photos/';
+        $extensiones = array( 'jpg', 'png', 'jpeg' );
 
-            if ( $tipo == 'img/jpeg' ||  $tipo == 'img/jpg' || $tipo == 'img/png' || $tipo == 'img/gif'  ) {
-
-                copy($archivo, $carpeta . $nombre . 'png');
-
-
-            //  mover archivo move_uploaded_file( $tmp, $carpeta.$nombre  );
-
-                echo 'Se subio el archivo' . $nombre . '<br/>';
-
-
-            }else{
-                echo 'No se pudo subir archivo' . $nombre . '<br/>';
-            }
-
-
+        if( !in_array( $fileExt, $extensiones ) ){
+            $errores_array[] = 'Extensiones de archivo no permitidas';
         }
 
-    }
+        if( $fileSize > 1024*1000*2 ){
+            $errores_array[] = 'El archivo excede el tamaño permitido ';
+        }
 
+        if ( file_exists('assets/img/photos/' . $fileName ) ) {
+            $errores_array[] = 'El archivo ya existe ';
+        }
+
+        if( empty( $errores_array ) ){
+            copy($_FILES['foto']['tmp_name'], 'assets/img/photos/' . $nombre . '.png');
+        }
+
+        
+    }else{
+        print_r($errores_array  );
+        echo 'Error al cargar el archivo';
+    }
 
 
 ?>
@@ -83,14 +82,13 @@
 
                 <div class="col-full-12">
 
-                    <form enctype="multipart/form-data" action="index.php" method="POST">
+                    <form  enctype="multipart/form-data" action="index.php" method="POST" >
+                
+                        <label for="foto">Subir foto</label>
+                        <input type="file" name="foto"  id="foto"  >
 
-                        <label for="archivos[]" > Subir Varias Imagenes </label>
-                        <input type="file" name="archivos[]" id=""  multiple>
-
-                        <input type="submit" value="Subir Archivos">
-
-
+                        <input type="submit" value="Enviar">
+                
                     </form>
 
                 </div>
