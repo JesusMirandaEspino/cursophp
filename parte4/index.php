@@ -94,6 +94,15 @@
     imagedestroy( $nuevaImagen );
     imagedestroy( $nuevaMascara );
 
+
+    $otraImagen = imagecreatefromjpeg( './assets/img/photos/1.png'  );
+
+    imageflip( $otraImagen, IMG_FLIP_HORIZONTAL );
+
+    imagejpeg( $otraImagen, 'horizontal.jpg'  );
+
+    
+
 ?>
 
 <!DOCTYPE html>
