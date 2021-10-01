@@ -45,6 +45,55 @@
     imagedestroy( $img );
     imagedestroy( $destino );
 
+
+
+
+    $imagenCadena = imagecreatefromstring( file_get_contents( './assets/img/photos/1.png' ) );
+
+    $w = imagesx( $imagenCadena );
+    $h = imagesy( $imagenCadena );
+
+    $w2 = $h2 = 400;
+
+    $nuevaImagen = imagecreate( $w, $h );
+
+    // Se activa el blend
+    imagealphablending( $nuevaImagen, true );
+
+    // Se copia la imagen
+    imagecopyresampled( $nuevaImagen, $imagenCadena, $w2, $h2, 0, 0, 0, 0, $w2, $h2, $w, $h  );
+
+    // Se crea la mascara
+    $nuevaMascara = imagecreatetruecolor( $w2, $h2 );
+
+    // Definir el color de la transparencia
+    $tranferencia = imagecolorallocate( $mascar, 255, 0, 0 );
+
+    // Definir el color de la transparencia
+    imagecolortransparent( $nuevaImagen, $transparencia );
+
+    // Creamos el elipse
+    imagefilledellipse( $nuevaMascara, $w/2, $h2/2, $w2, $h2, $transparencia );
+
+    // Creamos el color negro
+    $negro = imagecolorallocate( $nuevaMascara, 0, 0, 0  );
+
+    //Mezclamos los objetos
+    imagecopymerge( $nuevaImagen, $nuevaMascara, 0, 0, 0, 0, $w2, $h2, 100 );
+
+    //Definimos el color a eliminar
+    imagecolortransparent( $nuevaImagen, $negro );
+
+    // Rellenamos la imagen
+    imagefill( $nuevaImagen, 0, 0, $negro );
+
+    // Creamos el archivos
+    imagepng( $nuevaImagen );
+
+    //Limpiamos los objetos
+    imagedestroy( $nuevaImagen );
+    imagedestroy( $nuevaMascara );
+
 ?>
 
 <!DOCTYPE html>
