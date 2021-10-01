@@ -1,60 +1,31 @@
 <?php
 
-    if( isset( $_FILES['archivos'] ) ){
-        $msg = '';
+    // Leemos  la imagen
 
-        for ($i=0; $i < count($_FILES['archivos']['name']); $i++) { 
-            $archivo = $_FILES['archivos'];
-            $nombre = $archivo['name'][$i];
-            $tmp = $archivo['tmp_name'][$i];
-            $size = $archivo['size'][$i];
-            $tipo = $archivo['type'][$i];
-            $dim = getimagesize( $tmp );
-            $w = $dim[0];
-            $h = $dim[1];
-            $carpeta = 'assets/img/photos/';
+    $imagen = imagecreatefromjpeg( './assets/img/photos/1.png'  );
+    $black = '0X000000';
 
-            if ( $tipo == 'img/jpeg' ||  $tipo == 'img/jpg' || $tipo == 'img/png' || $tipo == 'img/gif'  ) {
+    //  marca de agua
+    $marca = imagecreatetruecolor( 630, 40 );
+    imagefilledrectangle(  $marca, 3,20, 12, 'Imagen de mi esposita, un dibujito', $black );
 
-                copy($archivo, $carpeta . $nombre . 'png');
-
-
-            //  mover archivo move_uploaded_file( $tmp, $carpeta.$nombre  );
-
-                echo 'Se subio el archivo' . $nombre . '<br/>';
+    // margenes  
+    $md = 10;
+    $mi = 10;
+    $sx = imagesx( $marca );
+    $sy = imagesy( $marca );
+    $ix = imagesx( $imagen );
+    $iy = imagesx( $imagen );
 
 
-            }else{
-                echo 'No se pudo subir archivo' . $nombre . '<br/>';
-            }
+    // Fusionar ambas Imagenes
+    imagecopymerge( $imagen, $marca, $ix - $sx - $md, $iy - $sy - $mi, 0, 0, $sx, $sy, 50 );
 
+    //Creamos el archivo
+    imagepng( $imagen, 'fotomarca.png' );
 
-        }
-
-    }
-
-
-$img = @imagecreatefromjpeg( './assets/img/photos/1.png' );
-
-
-
-if ( !$img  ) {
-    $img = imagecreatetruecolor( 200, 100 );
-    $color1 = imagecolorallocate( $img, 255, 255, 0 );
-    $color2 = imagecolorallocate( $img, 255, 255, 255 );
-
-    imagefilledrectangle(  $img, 0, 0, 200, 100, $color1 );
-    imagestring( $img, 3, 10, 10, 'No existe la imagen', $color2  );
-
-    header('Contet-type: image/png');
-
-    imagepng(  $img  );
-
-    imagedestroy( $img );
-
-}
-
-
+    // Liberamos la memoria
+    imagedestroy( $imagen );
 
 ?>
 
@@ -104,15 +75,7 @@ if ( !$img  ) {
 
                 <div class="col-full-12">
 
-                    <form enctype="multipart/form-data" action="index.php" method="POST">
 
-                        <label for="archivos[]" > Subir Varias Imagenes </label>
-                        <input type="file" name="archivos[]" id=""  multiple>
-
-                        <input type="submit" value="Subir Archivos">
-
-
-                    </form>
 
                 </div>
 
