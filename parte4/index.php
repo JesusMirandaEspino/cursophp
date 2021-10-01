@@ -27,6 +27,24 @@
     // Liberamos la memoria
     imagedestroy( $imagen );
 
+
+    $img = imagecreatefromjpeg('./assets/img/photos/1.png');
+    $ancho = $alto = 160;
+
+    // Renglones
+    for ($j = 0; $j < 3; $j++) { 
+        for ($i = 0; $i < 4; $i++) { 
+            $destino = imagecreatetruecolor( $ancho, $alto );
+            imagecopyresampled( $destino, $img, 0, 0, $ancho*$i, $alto*$j, $ancho, $alto, $ancho, $alto );
+        }
+    }
+
+    imagejpeg( $destino, 'salida'.$i.'-'.$j.'jpg'   );
+
+
+    imagedestroy( $img );
+    imagedestroy( $destino );
+
 ?>
 
 <!DOCTYPE html>
