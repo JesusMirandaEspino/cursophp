@@ -1,44 +1,42 @@
 <?php
 
-$im = @imagecreate(110, 20)
-    or die("Cannot Initialize new GD image stream");
-$color_fondo = imagecolorallocate($im, 0, 0, 0);
-$color_texto = imagecolorallocate($im, 233, 14, 91);
-imagestring($im, 1, 5, 5,  "A Simple Text String", $color_texto);
-imagepng($im);
-imagedestroy($im);
+
+$archivo = 'foto.jpg';
+$grados = 90;
+
+// Cargamos la imagen
+$img = imagecreatefromjpeg($archivo);
 
 
-//  Lienzo
-$lienzo = @imagecreate( 600,200 );
+// 
+$imagen90 = imagerotate( $img, $grados, 0 );
 
-// Color de Fondo
-$colorFondo = imagecolorallocate( $lienzo, 255, 255, 255 );
+//Guardamos la imagen90
+imagejpeg( $imagen90, 'foto90.jpg' );
 
-// Ciclo
-for( $j = 0; $j < 4; $j++ ){
-    for( $i = 0; $i <= 12; $i++ ){
-        $rojo = rand( 0, 255 );
-        $verde = rand(0, 255);
-        $azul = rand(0, 255);
 
-        // Creamos el color RGB
-        $relleno = imagecolorallocate( $lienzo, $rojo, $verde, $azul  );
+// Cambiar tamaños de imagenes
 
-        // Creamos el rectangulo
-        imagefilledrectangle( $lienzo, 50*$i, 50*$j, 50*($i+1), 50*($j+1), $relleno );
-    }
+$originales = 'imagenesOriginal/';
+$destino = 'imagenes640/';
+
+
+$imagenesArray = glob( $originales.'*jpg' );
+
+foreach ($imagenesArray as $img  ){
+
+    // Cargamos el archivo
+    $imagen = imagecreatefromjpeg($img);
+
+    // Escalamos
+    $imagen = imagescale( $imagen, 640 );  
+
+    // Guardamos
+    imagejpeg( $imagen, $destino.basename( $img ) );
+
 }
 
-    // cabecera
-    header('Conte-type: image/png');
-
-    // Desplegamos el formato png
-    imagepng($lienzo);
-
-    //Destruimos la imagen
-    imagedestroy($lienzo);
-
+imagedestroy( $imagen );
 
 ?>
 
