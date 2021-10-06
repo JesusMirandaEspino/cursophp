@@ -1,44 +1,43 @@
 <?php
 
+$im = @imagecreate(110, 20)
+    or die("Cannot Initialize new GD image stream");
+$color_fondo = imagecolorallocate($im, 0, 0, 0);
+$color_texto = imagecolorallocate($im, 233, 14, 91);
+imagestring($im, 1, 5, 5,  "A Simple Text String", $color_texto);
+imagepng($im);
+imagedestroy($im);
 
 
 //  Lienzo
-$lienzo = @imagecreate(600, 200);
+$lienzo = @imagecreate( 600,200 );
 
-
+// Color de Fondo
+$colorFondo = imagecolorallocate( $lienzo, 255, 255, 255 );
 
 // Ciclo
-for ($j = 0; $j < 4; $j++) {
-
-        $rojo = rand(0, 255);
+for( $j = 0; $j < 4; $j++ ){
+    for( $i = 0; $i <= 12; $i++ ){
+        $rojo = rand( 0, 255 );
         $verde = rand(0, 255);
         $azul = rand(0, 255);
 
         // Creamos el color RGB
-        $relleno = imagecolorallocate($lienzo, $rojo, $verde, $azul);
-
-        // Generamos las coordenadas de ancho y largo
-        $x = rand(0, 600);
-        $y = rand(0, 600);
-        $r = rand(30, 100);
-
-
+        $relleno = imagecolorallocate( $lienzo, $rojo, $verde, $azul  );
 
         // Creamos el rectangulo
-        imagefilledellipse($lienzo, $x, $y, $r, $r, $relleno);
-
-        
-    
+        imagefilledrectangle( $lienzo, 50*$i, 50*$j, 50*($i+1), 50*($j+1), $relleno );
+    }
 }
 
-// cabecera
-header('Conte-type: image/png');
+    // cabecera
+    header('Conte-type: image/png');
 
-// Desplegamos el formato png
-imagepng($lienzo);
+    // Desplegamos el formato png
+    imagepng($lienzo);
 
-//Destruimos la imagen
-imagedestroy($lienzo);
+    //Destruimos la imagen
+    imagedestroy($lienzo);
 
 
 ?>
