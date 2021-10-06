@@ -15,6 +15,29 @@ $imagen90 = imagerotate( $img, $grados, 0 );
 imagejpeg( $imagen90, 'foto90.jpg' );
 
 
+// Cambiar tamaños de imagenes
+
+$originales = 'imagenesOriginal/';
+$destino = 'imagenes640/';
+
+
+$imagenesArray = glob( $originales.'*jpg' );
+
+foreach ($imagenesArray as $img  ){
+
+    // Cargamos el archivo
+    $imagen = imagecreatefromjpeg($img);
+
+    // Escalamos
+    $imagen = imagescale( $imagen, 640 );  
+
+    // Guardamos
+    imagejpeg( $imagen, $destino.basename( $img ) );
+
+}
+
+imagedestroy( $imagen );
+
 ?>
 
 <!DOCTYPE html>
