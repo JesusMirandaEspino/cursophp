@@ -3,29 +3,43 @@
 
 
 //  Lienzo
-$lienzo = imagecreatetruecolor(600, 200);
-
-// Crear colores
-$blanco = imagecolorallocate( $lienzo,  255, 255, 255, );
-$rojo = imagecolorallocate( $lienzo, 255, 0, 0 );
-$azul = imagecolorallocate( $lienzo, 0, 255, 0 );
+$lienzo = @imagecreate(600, 200);
 
 
-// Dibujamos un circulo
-imagearc( $lienzo, 100, 100, 200, 200, 0,  360, $blanco );
 
-// Arco 
-imagearc($lienzo, 100, 100, 150, 150, 25,  155, $rojo);
+// Ciclo
+for ($j = 0; $j < 4; $j++) {
 
-// Ojos
-imagearc($lienzo, 60, 75, 50, 50, 0,  360, $rojo);
-imagearc($lienzo, 140, 75, 50, 50, 0,  360, $rojo);
+        $rojo = rand(0, 255);
+        $verde = rand(0, 255);
+        $azul = rand(0, 255);
 
-header( 'Content-type: image/png' );
+        // Creamos el color RGB
+        $relleno = imagecolorallocate($lienzo, $rojo, $verde, $azul);
 
+        // Generamos las coordenadas de ancho y largo
+        $x = rand(0, 600);
+        $y = rand(0, 600);
+        $r = rand(30, 100);
+
+
+
+        // Creamos el rectangulo
+        imagefilledellipse($lienzo, $x, $y, $r, $r, $relleno);
+
+        
+    
+}
+
+// cabecera
+header('Conte-type: image/png');
+
+// Desplegamos el formato png
 imagepng($lienzo);
 
-imagedestroy( $lienzo);
+//Destruimos la imagen
+imagedestroy($lienzo);
+
 
 ?>
 
