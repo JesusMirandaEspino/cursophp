@@ -27,6 +27,25 @@ imagepng($lienzo);
 
 imagedestroy( $lienzo);
 
+
+
+$puntos = [ 130,20, 150, 90, 210, 90, 160, 130, 180, 200, 130, 160, 80, 200, 100, 130, 50, 90, 10, 90 ];
+
+$lienzo2 = imagecreate( 250, 250 );
+
+$fondo = imagecolorallocate( $lienzo2, 0, 0, 0 );
+$azul = imagecolorallocate( $lienzo2, 0, 0, 255 );
+
+// Dibujamos un lienzo
+imagefilledrectangle( $lienzo2, 0, 0, 249, 249, $fondo );
+
+// Dibujamos el poligono
+imagefilledpolygon( $lienzo2, $puntos, 10, $azul );
+
+imagepng($lienzo2);
+
+imagedestroy($lienzo2);
+
 ?>
 
 <!DOCTYPE html>
