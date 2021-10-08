@@ -46,6 +46,37 @@ imagepng($lienzo2);
 
 imagedestroy($lienzo2);
 
+
+
+// Tamaño de la imagen
+$tamano = 500;
+
+// Crear el lienzo
+$lienzo3 = imagecreatetruecolor( $tamano, $tamano );
+
+// Color de fondo
+$fondo3 = imagecolorallocate( $lienzo3, 255, 255, 255  );
+
+// Rellenamos el lienzo
+imagefilledrectangle(  $lienzo3, 0, 0, $tamano, $tamano, $fondo  );
+
+// Dibujar las lineas
+for ($i=0; $i < 1000 ; $i++) { 
+    $x1 = rand(0, $tamano);
+    $y1 = rand(0, $tamano);
+    $x2 = rand(0, $tamano);
+    $y2 = rand(0, $tamano);
+
+    $color3 = imagecolorallocate( $lienzo3, rand(0, 255 ), rand(0, 255), rand(0, 255)  );
+
+    imageline( $lienzo3, $x1, $y1, $x2, $y2, $color3 );
+
+}
+
+imagepng($lienzo3);
+
+imagedestroy($lienzo3);
+
 ?>
 
 <!DOCTYPE html>
