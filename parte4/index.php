@@ -23,6 +23,24 @@
 
 
 
+    $para = 'correo1@sitio.com, correo1@sitio.com';
+    $subject = 'Recordatorio';
+    $mensaje = ' Texto en html ';
+
+    // Cabeceras
+    $cabeceras = 'MIME-Version: 1.0 '.'\r\n';
+    $cabeceras .= 'Context-type: text/html; charset=iso-8859-1'.'\r\n';
+
+    // Otras cabeceras
+    $cabeceras .= 'To: Mary <recursoshumanos@misitio.com>, Direccion: <correo2@sitio.com>'.'\r\n';
+    $cabeceras .= 'From: Recordatorio <correo2@sitio.com>'.'\r\n';
+    $cabeceras .= 'Cc: otro@sitio.com'.'\r\n';
+    $cabeceras .= 'Bcc: otro@sitio.com'.'\r\n';
+
+
+    mail( $para, $subject, $mensaje, $cabeceras );
+
+
 
 ?>
 
