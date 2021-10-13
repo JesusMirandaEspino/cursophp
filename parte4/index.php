@@ -9,6 +9,9 @@
     $th1 = '<th>';
     $th2 = '</th>';
 
+    $tpaginas = 10;
+    $maxPaginas = 5;
+
     try{
         $conn = new PDO('mysql:host=localhost;dbname=escuela', $user, $pass);
         echo 'conexion existosa' . '<br/>';
@@ -22,11 +25,22 @@
 
 
     $q = "SELECT * FROM  alumnos";
+    $qc = "SELECT COUNT(*) as reg FROM  alumnos";
 
     $resp = $conn->query( $q );
 
 
     $result = $resp->fetchAll();
+
+
+    if( isset($_GET['p']) ){
+        $pagina = $_GET['p'];
+    }else{
+        $pagina = 1;
+    }
+
+    $inicio = ($pagina - 1) * $tpaginas;
+
 
 
 
