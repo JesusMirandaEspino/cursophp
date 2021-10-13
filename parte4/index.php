@@ -1,44 +1,32 @@
 <?php
 
+    $user = 'root';
+    $pass = '';
 
+    $td1 = '<td>';
+    $td2 = '</td>';
 
-    if (isset($_POST['estado']) ) {
+    $th1 = '<th>';
+    $th2 = '</th>';
+
+    try{
+        $conn = new PDO('mysql:host=localhost;dbname=escuela', $user, $pass);
+        echo 'conexion existosa' . '<br/>';
         
-        $tc = 18.90;
-        $cantidad = $_POST['cantidad'];
-        $tipo = $_POST['tipo'];
 
-        if ( $tipo === '1' ) {
-            $r = $cantidad * $tc;
-            $rc = number_format( $r, 2 );
-            echo $rc;
-        }
+    }catch(PDOException $e){
 
-        if ($tipo === '2') {
-            $r = $cantidad / $tc;
-            $rc = number_format($r, 2);
-            echo $rc;
-        }
+        echo 'Error al conectar a la base de datos' . $e->getMessage();
+
     }
 
 
+    $q = "SELECT * FROM  alumnos";
 
-    $para = 'correo1@sitio.com, correo1@sitio.com';
-    $subject = 'Recordatorio';
-    $mensaje = ' Texto en html ';
-
-    // Cabeceras
-    $cabeceras = 'MIME-Version: 1.0 '.'\r\n';
-    $cabeceras .= 'Context-type: text/html; charset=iso-8859-1'.'\r\n';
-
-    // Otras cabeceras
-    $cabeceras .= 'To: Mary <recursoshumanos@misitio.com>, Direccion: <correo2@sitio.com>'.'\r\n';
-    $cabeceras .= 'From: Recordatorio <correo2@sitio.com>'.'\r\n';
-    $cabeceras .= 'Cc: otro@sitio.com'.'\r\n';
-    $cabeceras .= 'Bcc: otro@sitio.com'.'\r\n';
+    $resp = $conn->query( $q );
 
 
-    mail( $para, $subject, $mensaje, $cabeceras );
+    $result = $resp->fetchAll();
 
 
 
@@ -90,19 +78,41 @@
 
                 <div class="col-full-12">
 
-                    <form action="index.php" method="post">
+                        <?php
 
-                        <label for=""> Introduzca la cantidad a convertir </label>
-                        <input type="text" name="cantidad" id="">
+                            echo '<table>';
 
-                        <input type="radio" name="tipo" id="tipo" value="1" checked="checked"> Dolares
-                        <input type="radio" name="tipo" id="tipo" value="2" > Pesos Mexicanos 
+                            echo '<tr>';
+                                echo $th1 .  'Id'         .   $th2;
+                                echo $th1 .  'Nombre'     .   $th2;
+                                echo $th1 .  'Apellidos'  .   $th2;
+                                echo $th1 .  'Nacimiento' .   $th2;
+                                echo $th1 .  'Promedio'   .   $th2;
+                                echo $th1 .  'Sexo'       .   $th2;
+                                echo $th1 .  'Id Escuela' .   $th2;
+                                echo $th1 .  'Id Salon'   .   $th2;
+                                echo $th1 .  'Id Curso'   .   $th2;
+                            echo '</tr>';
 
-                        <input type="hidden" name="estado" value="1">
+                            foreach($result as $data ){
 
-                        <input type="submit"  value="Convertir">
+                                echo '<tr>';
+                                    echo $td1 .  $data["id"]         .   $td2;
+                                    echo $td1 .  $data["nombre"]     .   $td2;
+                                    echo $td1 .  $data["apellidos"]  .   $td2;
+                                    echo $td1 .  $data["nacimiento"] .   $td2;
+                                    echo $td1 .  $data["promedio"]   .   $td2;
+                                    echo $td1 .  $data["sexo"]       .   $td2;
+                                    echo $td1 .  $data["idEscuela"]  .   $td2;
+                                    echo $td1 .  $data["idSalon"]    .   $td2;
+                                    echo $td1 .  $data["idCurso"]    .   $td2;
+                                echo '</tr>';
 
-                    </form>
+                                }
+
+                            echo '</table>';
+
+                        ?>
 
                 </div>
 
