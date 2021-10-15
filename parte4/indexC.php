@@ -1,26 +1,48 @@
 <?php
 
+    $user = 'root';
+    $pass = '';
 
-session_start();
+    $td1 = '<td>';
+    $td2 = '</td>';
 
-// estabelcer el Contenido
-header( 'Content-Type: image/png' );
+    $th1 = '<th>';
+    $th2 = '</th>';
+
+    $tpaginas = 10;
+    $maxPaginas = 5;
+
+    try{
+        $conn = new PDO('mysql:host=localhost;dbname=escuela', $user, $pass);
+        echo 'conexion existosa' . '<br/>';
+        
+
+    }catch(PDOException $e){
+
+        echo 'Error al conectar a la base de datos' . $e->getMessage();
+
+    }
 
 
-// Crear el objeto de la imagen
-$img = imagecreatetruecolor( 150, 30 );
+    $q = "SELECT * FROM  alumnos";
+    $qc = "SELECT COUNT(*) as reg FROM  alumnos";
 
-// Crear colores
-$blanco = imagecolorallocate( $mg, 255, 255, 255 );
-$gris = imagecolorallocate($mg, 128, 128, 128);
-$blanco = imagecolorallocate($mg, 0, 0, 0);
-$blanco = imagecolorallocate($mg, 255, 255, 255);
+    $resp = $conn->query( $q );
 
-$imagefilledrectangle( $img, 0, 0, 399, 29, $blanco );
 
-// Desplegar el rectangulo
-imagepng($img);
-imagedestroy($img);
+    $result = $resp->fetchAll();
+
+
+    if( isset($_GET['p']) ){
+        $pagina = $_GET['p'];
+    }else{
+        $pagina = 1;
+    }
+
+    $inicio = ($pagina - 1) * $tpaginas;
+
+
+
 
 ?>
 
