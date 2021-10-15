@@ -48,6 +48,13 @@ $_SESSION['captcha'] = $texto;
 imagepng($img);
 imagedestroy($img);
 
+
+
+$ip = getenv(  'REMOTE_ADDR' );
+
+$navegador = getenv( 'HTTP_USE_AGENT' );
+
+
 ?>
 
 <!DOCTYPE html>
