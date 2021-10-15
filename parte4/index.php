@@ -8,15 +8,41 @@ header( 'Content-Type: image/png' );
 
 
 // Crear el objeto de la imagen
-$img = imagecreatetruecolor( 150, 30 );
+$img = imagecreatetruecolor( 250, 250 );
 
 // Crear colores
-$blanco = imagecolorallocate( $mg, 255, 255, 255 );
-$gris = imagecolorallocate($mg, 128, 128, 128);
-$blanco = imagecolorallocate($mg, 0, 0, 0);
-$blanco = imagecolorallocate($mg, 255, 255, 255);
+$blanco = imagecolorallocate( $img, 255, 255, 255 );
+$gris = imagecolorallocate($img, 128, 128, 128);
+$negro = imagecolorallocate($img, 0, 0, 0);
+$blanco = imagecolorallocate($img, 255, 255, 255);
 
 $imagefilledrectangle( $img, 0, 0, 399, 29, $blanco );
+
+
+// Crear una variable Aleatoria
+$l = rand( 5, 7 );
+$c = 'abcdefghijklmnopqrstuvwxyz23456789';
+
+
+srand( (double)microtime()*10000000 );
+
+for ($i=0; $i < $l ; $i++) { 
+    $num = rand() % 32;
+    $car = substr( $c, $num, 1 );
+    $str .= $car;
+}
+
+
+$texto = $str;
+
+// Archivo de la fuente
+$fuente = 'arial.ttf';
+
+// 
+imagettftext(  $img, 20, 0, 15, 25, $gris, $fuente, $texto );
+imagettftext(  $img, 20, 0, 17, 27, $negro, $fuente, $texto );
+
+$_SESSION['captcha'] = $texto;
 
 // Desplegar el rectangulo
 imagepng($img);
