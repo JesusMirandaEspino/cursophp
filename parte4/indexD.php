@@ -1,30 +1,58 @@
 <?php
 
-// Archivo a leer
+
+session_start();
+
+// estabelcer el Contenido
+header( 'Content-Type: image/png' );
 
 
-// Verificar que exista el archivo
-if (file_exists('libros.xml')) {
+// Crear el objeto de la imagen
+$img = imagecreatetruecolor( 250, 250 );
 
-    $xml = simplexml_load_file('libros.xml');
-    
+// Crear colores
+$blanco = imagecolorallocate( $img, 255, 255, 255 );
+$gris = imagecolorallocate($img, 128, 128, 128);
+$negro = imagecolorallocate($img, 0, 0, 0);
+$blanco = imagecolorallocate($img, 255, 255, 255);
 
-} else {
-    exit('Error abriendo libros.xml.');
+$imagefilledrectangle( $img, 0, 0, 399, 29, $blanco );
+
+
+// Crear una variable Aleatoria
+$l = rand( 5, 7 );
+$c = 'abcdefghijklmnopqrstuvwxyz23456789';
+
+
+srand( (double)microtime()*10000000 );
+
+for ($i=0; $i < $l ; $i++) { 
+    $num = rand() % 32;
+    $car = substr( $c, $num, 1 );
+    $str .= $car;
 }
 
-$xmlJson = json_encode($xml);
+
+$texto = $str;
+
+// Archivo de la fuente
+$fuente = 'arial.ttf';
+
+// 
+imagettftext(  $img, 20, 0, 15, 25, $gris, $fuente, $texto );
+imagettftext(  $img, 20, 0, 17, 27, $negro, $fuente, $texto );
+
+$_SESSION['captcha'] = $texto;
+
+// Desplegar el rectangulo
+imagepng($img);
+imagedestroy($img);
 
 
-//Crea las primeras etiquetas de la tabla
-echo "<html><body><table border=1>";
-echo "<tr><th>Titulo</th><th>Autor</th><th>Editorial</th><th>Precio</th><th>Fecha</th></tr>";
 
-//Inicia ciclo para leer el archivo
+$ip = getenv(  'REMOTE_ADDR' );
 
-foreach( $xml->libros as $libros ){
-    echo $libros-> libro->attributes();
-}
+$navegador = getenv( 'HTTP_USE_AGENT' );
 
 
 ?>
@@ -75,11 +103,11 @@ foreach( $xml->libros as $libros ){
 
                 <div class="col-full-12">
 
-                    <?php
+                        <?php
 
 
 
-                    ?>
+                        ?>
 
                 </div>
 
