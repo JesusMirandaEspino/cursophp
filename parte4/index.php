@@ -1,17 +1,19 @@
 <?php
 
 // Archivo a leer
-
+$path = 'libros.xml';
 
 // Verificar que exista el archivo
-if (file_exists('libros.xml')) {
+if (file_exists($path)) {
 
-    $xml = simplexml_load_file('libros.xml');
+    $xml = simplexml_load_file($path);
     
 
 } else {
     exit('Error abriendo libros.xml.');
 }
+
+
 
 $xmlJson = json_encode($xml);
 
@@ -22,8 +24,10 @@ echo "<tr><th>Titulo</th><th>Autor</th><th>Editorial</th><th>Precio</th><th>Fech
 
 //Inicia ciclo para leer el archivo
 
-foreach( $xml->libros as $libros ){
-    echo $libros-> libro->attributes();
+
+
+foreach( $xml->libro as $libro ){
+    print $libro;
 }
 
 
