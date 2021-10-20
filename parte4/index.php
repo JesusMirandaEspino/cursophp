@@ -24,6 +24,25 @@
 
 
 
+    // Leer archivo JSON
+
+    $path2 = 'alumnos.json';
+
+    if( !file_exists( $path2 ) ){
+        exit('File no found');
+    }
+
+    $data = file_get_contents( $path2 );
+    $json = json_decode( $data, true );
+
+    for ($i=0; $i < count($json); $i++) { 
+        $n = $json[$i]['nombre'];
+        $c = $json[$i]['cali'];
+
+        echo $n . '  ' . $c . '    ';
+    }
+
+
 ?>
 
 <!DOCTYPE html>
