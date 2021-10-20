@@ -43,6 +43,20 @@
     }
 
 
+    //  Crear un archivo JSON
+
+    $path3 = 'alumnos3.json';
+
+    $file = fopen( $path3, 'w' );
+
+    $alumnos = [ [ 'nombre'=>'Mutuelo', 'cali'=>'9.6' ], ['nombre' => 'Ramo', 'cali' => '9.7'] ];
+
+    $json2 = json_encode( $alumnos );
+
+    fwrite( $file, $json2  );
+    fclose($file);
+
+
 ?>
 
 <!DOCTYPE html>
