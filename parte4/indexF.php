@@ -1,6 +1,60 @@
 <?php
 
+    $path = 'libros2.xml';
 
+    $writer = new XMLWriter();
+    $writer->openUri($path);
+
+    $writer->startDocument( '1.0' );
+    $writer->startElement('libros');
+
+    $writer->startElement('libro');
+    $writer->writeAttribute( 'nombre', 'libro1' );
+    $writer->endElement();
+
+    $writer->startElement('libro');
+    $writer->writeAttribute( 'nombre', 'libro2' );
+    $writer->endElement();
+
+    $writer->endElement();
+
+    $writer->endDocument();
+
+    $writer->flush();
+
+
+
+    // Leer archivo JSON
+
+    $path2 = 'alumnos.json';
+
+    if( !file_exists( $path2 ) ){
+        exit('File no found');
+    }
+
+    $data = file_get_contents( $path2 );
+    $json = json_decode( $data, true );
+
+    for ($i=0; $i < count($json); $i++) { 
+        $n = $json[$i]['nombre'];
+        $c = $json[$i]['cali'];
+
+        echo $n . '  ' . $c . '    ';
+    }
+
+
+    //  Crear un archivo JSON
+
+    $path3 = 'alumnos3.json';
+
+    $file = fopen( $path3, 'w' );
+
+    $alumnos = [ [ 'nombre'=>'Mutuelo', 'cali'=>'9.6' ], ['nombre' => 'Ramo', 'cali' => '9.7'] ];
+
+    $json2 = json_encode( $alumnos );
+
+    fwrite( $file, $json2  );
+    fclose($file);
 
 
 ?>
@@ -51,17 +105,11 @@
 
                 <div class="col-full-12">
 
-                    <form action="acceso.php" method="post">
+                    <?php
 
-                        <label for="usuario">Usuario</label>
-                        <input type="text" name="usuario" id="usuario" placeholder="Usuario">
 
-                        <label for="clave">Contraseña</label>
-                        <input type="password" name="clave" id="clave" placeholder="Password">
 
-                        <input type="submit" value="Enviar">
-
-                    </form>
+                    ?>
 
                 </div>
 
