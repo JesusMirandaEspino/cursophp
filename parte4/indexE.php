@@ -1,27 +1,34 @@
 <?php
 
-    $path = 'libros2.xml';
+// Archivo a leer
+$path = 'libros.xml';
 
-    $writer = new XMLWriter();
-    $writer->openUri($path);
+// Verificar que exista el archivo
+if (file_exists($path)) {
 
-    $writer->startDocument( '1.0' );
-    $writer->startElement('libros');
+    $xml = simplexml_load_file($path);
+    
 
-    $writer->startElement('libro');
-    $writer->writeAttribute( 'nombre', 'libro1' );
-    $writer->endElement();
+} else {
+    exit('Error abriendo libros.xml.');
+}
 
-    $writer->startElement('libro');
-    $writer->writeAttribute( 'nombre', 'libro2' );
-    $writer->endElement();
 
-    $writer->endElement();
 
-    $writer->endDocument();
+$xmlJson = json_encode($xml);
 
-    $writer->flush();
 
+//Crea las primeras etiquetas de la tabla
+echo "<html><body><table border=1>";
+echo "<tr><th>Titulo</th><th>Autor</th><th>Editorial</th><th>Precio</th><th>Fecha</th></tr>";
+
+//Inicia ciclo para leer el archivo
+
+
+
+foreach( $xml->libro as $libro ){
+    print $libro;
+}
 
 
 ?>
