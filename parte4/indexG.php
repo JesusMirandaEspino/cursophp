@@ -1,16 +1,7 @@
 <?php
 
-    error_reporting( E_ALL );
 
-    ini_set( 'display_errors', 1 );
-// Activos en 1, inactivos en 0
-    ini_set('zend.assertions', 1);
-// warning en 0, fatal error en 1
-    ini_set( 'assert_exception', 0 );
 
-    class CustomError extends AssertionError{}
-
-    assert( false, new CustomError('es falso') );
 
 ?>
 
@@ -84,7 +75,7 @@
 
 
 
-
+    
 
     </header>
 

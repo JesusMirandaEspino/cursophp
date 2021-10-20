@@ -4,6 +4,7 @@
 
     if($_SESSION['acceso'] != '1' ){
         header( 'Location:index.php' );
+        unset($_SESSION['acceso'] );
         exit;
     }
 
