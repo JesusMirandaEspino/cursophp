@@ -1,48 +1,16 @@
 <?php
 
-    $correo = 'fj_****<br/>jesus@@@gmail.com****hola que tal';
+    error_reporting( E_ALL );
 
-    echo  $correo . '   ' ;
+    ini_set( 'display_errors', 1 );
+// Activos en 1, inactivos en 0
+    ini_set('zend.assertions', 1);
+// warning en 0, fatal error en 1
+    ini_set( 'assert_exception', 0 );
 
-    $correo = filter_var( $correo, FILTER_SANITIZE_EMAIL );
+    class CustomError extends AssertionError{}
 
-    echo $correo;
-
-
-
-    if( filter_var( $correo, FILTER_VALIDATE_EMAIL ) ){
-        echo 'El correo es correcto';
-    }else{
-        echo 'El correo es incorrecto';
-    }
-
-
-
-    echo '<br/>';
-
-    $saludo = '<h1>Hola que tal</h1>';
-
-    echo $saludo;
-
-    $saludo = filter_var( $saludo, FILTER_SANITIZE_STRING );
-
-    echo $saludo;
-
-
-
-    $url = 'https://www      .udemy       .com'; 
-
-    $url = filter_var( $url, FILTER_SANITIZE_URL );
-
-    echo $url;
-
-
-    if (filter_var($url, FILTER_VALIDATE_URL)) {
-        echo 'El url es correcto';
-    } else {
-        echo 'El url es incorrecto';
-    }
-
+    assert( false, new CustomError('es falso') );
 
 ?>
 
@@ -92,6 +60,17 @@
 
                 <div class="col-full-12">
 
+                    <form action="acceso.php" method="post">
+
+                        <label for="usuario">Usuario</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+
+                        <label for="clave">Contraseña</label>
+                        <input type="password" name="clave" id="clave" placeholder="Password">
+
+                        <input type="submit" value="Enviar">
+
+                    </form>
 
                 </div>
 
