@@ -44,6 +44,13 @@
     }
 
 
+
+    $titulo = filter_input(  INPUT_GET, 'Buscar', FILTER_SANITIZE_SPECIAL_CHARS );
+    $buscar = filter_input(INPUT_GET, 'Buscar', FILTER_SANITIZE_ENCODED );
+
+    echo "<a href='https://www.google.com/?buscar=".$buscar."' >Buscar</a>"
+
+
 ?>
 
 <!DOCTYPE html>
