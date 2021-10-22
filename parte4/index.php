@@ -70,6 +70,26 @@
     var_dump($misDatos);
 
 
+    $edad = 80;
+    $min = 1;
+    $max = 120;
+
+    if( filter_var( $edad, FILTER_VALIDATE_INT, [ 'options' => [ 'min' => $min, 'max' => $max ]  ] ) ){
+        echo 'La edad es correcta';
+    }else{
+        echo 'La edad es incorrecta';
+    }
+
+    $ip = '202.$$132254234324';
+
+
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 )) {
+        echo 'La ip es correcta';
+    } else {
+        echo 'La ip es incorrecta';
+    }
+
+
 ?>
 
 <!DOCTYPE html>
