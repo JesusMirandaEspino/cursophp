@@ -48,7 +48,26 @@
     $titulo = filter_input(  INPUT_GET, 'Buscar', FILTER_SANITIZE_SPECIAL_CHARS );
     $buscar = filter_input(INPUT_GET, 'Buscar', FILTER_SANITIZE_ENCODED );
 
-    echo "<a href='https://www.google.com/?buscar=".$buscar."' >Buscar</a>"
+    echo "<a href='https://www.google.com/?buscar=".$buscar."' >Buscar</a>";
+
+
+    $data = [ 'id' => '<p>Libros</p>', 'cantidad' => '<h2>10</h2>', 'version' => '1.0.0', 'capitulos' => [ '1', '15', '24' ], 'precio' => '100.00' ];
+
+    $filtros = [    'id' => FILTER_SANITIZE_ENCODED, 
+                    'cantidad'  => 
+                                    [   'filter' => FILTER_VALIDATE_INT, 
+                                        'flags' =>  FILTER_FORCE_ARRAY, 
+                                        'options' => [ 'min_range' => 1, 'max_range' => 15 ]  ],
+                    'version'   => FILTER_SANITIZE_ENCODED,
+                    'noExiste'  => FILTER_VALIDATE_INT,
+                    'capitulos' => [    'filter' => FILTER_VALIDATE_INT,
+                                        'flags' =>  FILTER_REQUIRE_SCALAR ],
+                    'precio'    => [    'filter' => FILTER_VALIDATE_INT,
+                                        'flags' =>  FILTER_REQUIRE_ARRAY] ];
+
+    $misDatos = filter_var_array( $data, $filtros  );
+
+    var_dump($misDatos);
 
 
 ?>
