@@ -90,6 +90,31 @@
     }
 
 
+    function validarNombre( $cadena ){
+        if( !strpos( $cadena, ', ' )  ){ return false; }
+        list( $apellidos, $nombre ) = explode(', ', 2);
+        $vacios = (empty($apellidos) || empty($nombre) );
+        $sonCadenas = ( !is_string( $apellidos ) || !is_string($nombre));
+
+        if( $vacios || $sonCadenas ){
+            return false;
+        }else{
+            return $nombre . '  ' . $apellidos;
+        }
+
+    }
+
+
+    $nombre = 'Miranda, Jesus';
+    $nuevo = filter_var( $onmbre, FILTER_CALLBACK, [ 'options' => 'validarNombre' ]);
+
+    if( !$nuevo ){
+        echo 'Nombre es incorrecto';
+    }else{
+        echo 'Nombre es correcto';
+    }
+
+
 ?>
 
 <!DOCTYPE html>
