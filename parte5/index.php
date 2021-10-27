@@ -49,8 +49,11 @@
 
             <div class="contenedor1">
 
-                <div class="col-full-12">
+                <div class="col-full-12" id="salida">
 
+                    <h2>Pulsa el boton para ver el elemento AJAX</h2>
+
+                    <button id="btn" >Cargar archivo</button>
 
                 </div>
 
