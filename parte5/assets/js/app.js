@@ -1,4 +1,5 @@
 'use strict';
+    let xmlhttp = new XMLHttpRequest();
     const iniciar = document.getElementById('btn');
 
 const cargarArchivo = () => {
@@ -12,5 +13,10 @@ const cargarArchivo = () => {
 };
 
 
+// GET o POST, url, true asincrono, false sincrono
+xmlhttp.open('GET', 'ajax.txt', true);
+
+// Ejecutemos la lectura
+xmlhttp.send();
 
 iniciar.addEventListener('click', cargarArchivo);
