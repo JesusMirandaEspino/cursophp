@@ -1,16 +1,16 @@
 'use strict';
-const iniciar = document.getElementById('btn');
+    const iniciar = document.getElementById('btn');
 
 const cargarArchivo = () => {
 
-    if(window.XMLHttpRequest){
+    if (window.XMLHttpRequest) {
         let xmlhttp = new XMLHttpRequest();
         console.log(xmlhttp);
-    }else{
-        console.log( 'No lo soporta' );
+    } else {
+        console.log('No lo soporta');
     }
 };
 
 
 
-iniciar.addEventListener(  );
+iniciar.addEventListener('click', cargarArchivo);
