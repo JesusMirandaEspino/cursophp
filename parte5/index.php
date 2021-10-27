@@ -1,5 +1,55 @@
 <?php
 
+/*
+    if( file_exists('datos.txt') ){
+        $archivo = fopen( 'datos.txt', 'r' );
+    }else{
+        die( 'No existe el archivo' );
+    }
+
+
+
+
+    function manejadorErrores( $nivel, $mensaje, $archivo, $linea, $contexto ){
+        echo ' **** Nivel: ' .    $nivel;
+        echo ' **** Mensaje: ' .  $mensaje;
+        echo ' **** En el arhivo: ' . $archivo;
+        echo ' **** En la linea: ' . $linea;
+        echo ' **** Con el contexto: ';
+        var_dump($contexto);
+    }
+
+    set_error_handler( 'manejadorErrores' );
+
+
+    print $prueba;
+
+*/
+
+
+$num = 0;
+
+    if( $num == 0 ){
+        trigger_error('No podemos dividir entre cero', E_USER_NOTICE);
+        // trigger_error( 'No podemos dividir entre cero', E_USER_ERROR );
+        
+    }
+
+
+function suma( $n1, $n2 ){
+    $total = $n1 + $n2;
+    if( $total > 10 ){
+        throw new Exception('Numero mayor a 10');
+    }
+    return true;
+}
+
+try{
+    suma(10, 10);
+}
+catch( Exception $e ){
+    echo 'Mensaje: ' . $e->getMessage();
+}
 
 
 
@@ -51,9 +101,6 @@
 
                 <div class="col-full-12" id="salida">
 
-                    <h2>Pulsa el boton para ver el elemento AJAX</h2>
-
-                    <button id="btn" >Cargar archivo</button>
 
                 </div>
 
