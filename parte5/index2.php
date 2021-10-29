@@ -1,6 +1,43 @@
 <?php
 
+/*************************************
+                POO
+**************************************/
 
+//  Codigo imperativo o espagueti
+$automovil1 = (object)['marca'=>'toyota', 'modelo'=>'corolla'];
+$automovil2 = (object)['marca' => 'hyundai', 'modelo' => 'Accent Vision'];
+
+function mostrar( $automovil ){
+    echo "<p> hola soy un automovil marca: $automovil->marca , con el modelo $automovil->modelo </p>";
+}
+
+mostrar($automovil1);
+
+
+
+
+// ***************** 
+// Clase
+// *****************
+Class Auto {
+
+    #Propiedades
+    public $marca;
+    public $modelo;
+
+    #Metodo
+    public function mostrar(){
+        echo "Hola soy un $this->marca , del modelo $this->modelo";
+    }
+}
+
+
+// Objeto
+$a = new Auto();
+$a -> marca = 'hyundai';
+$a -> modelo = 'Accent Vision';
+$a->mostrar();
 
 ?>
 
@@ -25,14 +62,9 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/responsivo.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- **************************  -->
     <!-- **************************  -->
-
-    <script src="https://use.fontawesome.com/f62da5b59f.js"></script>
-
     <link rel="icon" type="image/png" href="">
-
     <!-- **************************  -->
     <!-- **************************  -->
     <title>My SQL Connect</title>
@@ -51,36 +83,17 @@
 
         <section class="fila">
 
-            <!--    Logo     -->
             <div class="contenedor1">
-                <div class="col-full-12 container-fluid" id="salida">
-                    <h1 class="text-center py-3">Logo</h1>
+
+                <div class="col-full-12" id="salida">
+
+
                 </div>
-            </div>
 
-            <!--    Botonera    -->
-            <div class="contenedor1">
-                <div class="col-full-12 container-fluid bg-light" id="salida">
-                    <ul class="nav nav-justified py-2 nav-pills">
+                <div class="col-full-12">
 
-                        <li class="nav-item">
-                            <a class="nav-link active" class="" href="index.php?pagina=registro">Registro</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pagina=ingreso">Ingreso</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pagina=inicio">Inicio</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pagina=salir">Salir</a>
-                        </li>
-
-                    </ul>
                 </div>
+
             </div>
 
         </section>
