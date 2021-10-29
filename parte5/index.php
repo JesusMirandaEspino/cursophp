@@ -19,6 +19,29 @@ function mostrar( $automovil ){
 mostrar($automovil1);
 
 
+// Clase
+Class Auto {
+
+    #Propiedades
+    public $marca;
+    public $modelo;
+
+    #Metodo
+    public function mostrar(){
+        echo "Hola soy un $this->marca , del modelo $this->modelo";
+    }
+
+}
+
+
+// Objeto
+
+$a = new Auto();
+
+$a -> marca = 'hyundai';
+$a -> modelo = 'Accent Vision';
+
+$a->mostrar();
 
 ?>
 
