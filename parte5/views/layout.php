@@ -112,6 +112,22 @@
                                 </li>
                             <?php endif   ?>
 
+
+                        <?php else : ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" class="" href="index.php?pages=registro">Registro</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" class="" href="index.php?pages=inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
+                            </li>
+                            
                         <?php endif   ?>
 
 
