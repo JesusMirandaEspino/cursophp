@@ -68,19 +68,19 @@
                     <ul class="nav nav-justified py-2 nav-pills">
 
                         <li class="nav-item">
-                            <a class="nav-link " class="" href="registro.php">Registro</a>
+                            <a class="nav-link " class="" href="index.php?pages=registro">Registro</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" class="" href="ingreso.php">Ingreso</a>
+                            <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" class="" href="index.php">Inicio</a>
+                            <a class="nav-link active" class="" href="index.php?pages=inicio">Inicio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pagina=salir">Salir</a>
+                            <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
                         </li>
 
                     </ul>
@@ -96,8 +96,20 @@
                 <div class="col-full-12">
 
                     <?php   
+
+                    if( isset($_GET['pages']) ){    
+                        
+                        $pages = $_GET['pages'];
+
+                        if( $pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir' ){
+                            include 'pages/' . $pages . '.php' ;
+                        }
+
+                    }else{
+                        include 'pages/registro.php';
+                    }
                     
-                        include 'pages/inicio.php';
+                        
 
                     ?>
 
