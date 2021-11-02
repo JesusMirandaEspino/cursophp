@@ -67,21 +67,57 @@
                 <div class="col-full-12 container-fluid bg-light" id="salida">
                     <ul class="nav nav-justified py-2 nav-pills">
 
-                        <li class="nav-item">
-                            <a class="nav-link " class="" href="index.php?pages=registro">Registro</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
-                        </li>
+                        <?php if (isset($_GET['pages'])) :   ?>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" class="" href="index.php?pages=inicio">Inicio</a>
-                        </li>
+                            <?php if ($_GET['pages'] == 'registro') :   ?>
+                                <li class="nav-item">
+                                    <a class="nav-link active" class="" href="index.php?pages=registro">Registro</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" class="" href="index.php?pages=registro">Registro</a>
+                                </li>
+                            <?php endif   ?>
 
-                        <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
-                        </li>
+
+                            <?php if ($_GET['pages'] == 'ingreso') :   ?>
+                                <li class="nav-item">
+                                    <a class="nav-link active" class="" href="index.php?pages=ingreso">Ingreso</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
+                                </li>
+                            <?php endif   ?>
+
+
+                            <?php if ($_GET['pages'] == 'inicio') :   ?>
+                                <li class="nav-item">
+                                    <a class="nav-link active" class="" href="index.php?pages=inicio">Inicio</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" class="" href="index.php?pages=inicio">Inicio</a>
+                                </li>
+                            <?php endif   ?>
+
+                            <?php if ($_GET['pages'] == 'salir') :   ?>
+                                <li class="nav-item">
+                                    <a class="nav-link active" class="" href="index.php?pages=salir">Salir</a>
+                                </li>
+                            <?php else : ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
+                                </li>
+                            <?php endif   ?>
+
+                        <?php endif   ?>
+
+
+
+
+
 
                     </ul>
                 </div>
@@ -95,21 +131,20 @@
 
                 <div class="col-full-12">
 
-                    <?php   
+                    <?php
 
-                    if( isset($_GET['pages']) ){    
-                        
+                    if (isset($_GET['pages'])) {
+
                         $pages = $_GET['pages'];
 
-                        if( $pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir' ){
-                            include 'pages/' . $pages . '.php' ;
+                        if ($pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir') {
+                            include 'pages/' . $pages . '.php';
                         }
-
-                    }else{
+                    } else {
                         include 'pages/registro.php';
                     }
-                    
-                        
+
+
 
                     ?>
 
