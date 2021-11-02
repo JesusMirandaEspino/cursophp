@@ -76,7 +76,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" class="" href="index.php">Inicio</a>
+                            <a class="nav-link" class="" href="inicio.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
