@@ -1,4 +1,3 @@
-
 <div class="col-full-12">
     <h1>Regristro</h1>
 </div>
@@ -6,7 +5,7 @@
 
 <div class="d-flex">
 
-    <form class="bg-light" method="post" >
+    <form class="bg-light" method="post">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <div class="input-group">
@@ -36,15 +35,29 @@
                 <input type="password" class="form-control" id="pwd" aria-describedby="pwd" name="registroPwd">
             </div>
         </div>
+
+        <?php
+
+        /* Metodo instaciado 
+        $registro = new ControladorFormularios();
+        $registro->ControlRegistro();
+*/
+
+
+        /*Metodo estatico*/
+
+        $registro = ControladorFormularios::ControlRegistro();
+
+
+        if ($registro == 'ok') {
+            echo '<div class="alert alert-success" >Registro Exitoso</div>';
+        }
+
+        ?>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <?php
 
-        $registro = new ControladorFormularios();
-
-        $registro->ControlRegistro();
-
-    ?>
 
 </div>

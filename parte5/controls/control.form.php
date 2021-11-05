@@ -2,14 +2,13 @@
 
 class ControladorFormularios {
 
-    /******************/
-    /*    Registro   */
-    /*****************/
+    /***********************/
+       /*    Registro   */
+    /**********************/
     
-    public function ControlRegistro(){
+    static public function ControlRegistro(){
         if( isset( $_POST['registroNombre'] ) ){
-            //code
-            echo $_POST['registroNombre'] ;
+            return 'ok' ;
         }
     }
 }
