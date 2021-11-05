@@ -50,6 +50,12 @@
 
 
         if ($registro == 'ok') {
+
+            echo '<script> if( window.history.replaceState ){
+                window.history.replaceState( null, null, window.location.href )
+            } </script>';
+
+
             echo '<div class="alert alert-success" >Registro Exitoso</div>';
         }
 
