@@ -155,6 +155,8 @@
 
                         if ($pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir') {
                             include 'pages/' . $pages . '.php';
+                        }else{
+                            include 'pages/error404.php';
                         }
                     } else {
                         include 'pages/registro.php';
