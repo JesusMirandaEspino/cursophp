@@ -13,7 +13,7 @@
 
             // Statement::Declaracion
 
-            $statement = Conexion::conect()->prepare("INSERT TO $tabla(nombre, email, password ) VALUES( :nombre, :email, :password ) ");
+            $statement = Conexion::conect()->prepare("INSERT INTO $tabla(nombre, email, password ) VALUES( :nombre, :email, :password ) ");
 
             $statement->bindParam( ":nombre", $datos['nombre'], PDO::PARAM_STR );
             $statement->bindParam(":email", $datos['email'], PDO::PARAM_STR);
@@ -25,6 +25,9 @@
             }else{
                 print_r( Conexion::conect()->errorInfo() );
             }
+
+
+            $statement = null;
 
 
         }
