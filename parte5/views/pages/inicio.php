@@ -7,7 +7,7 @@ $usuarios = ControladorFormularios::SeleccionarRegistros();
 ?>
 
 
-<table class="table">
+<table class="table" aria-label="Data user" aria-describedby="list">
     <thead>
         <tr>
             <th scope="col">ID</th>
