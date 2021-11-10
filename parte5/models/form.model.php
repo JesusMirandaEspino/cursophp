@@ -32,6 +32,17 @@
 
         }
 
+
+        static public function mdlSeleccionarRegistros($tabla){
+
+            $statement = Conexion::conect()->prepare( "SELECT * FROM $tabla" );
+
+            $statement->execute();
+
+            return $statement->fetchAll();
+
+        }
+
     }
 
 ?>
