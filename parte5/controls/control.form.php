@@ -55,7 +55,12 @@ class ControladorFormularios {
                 if (is_array($respuesta)) {
 
                         if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['password'] == $_POST['ingresoPwd']) {
-                            echo 'Entro';
+                            echo '<script> if( window.history.replaceState ){
+                            window.history.replaceState( null, null, window.location.href );
+
+                            window.location = "index.php?pages=inicio";
+
+                            } </script>';
 
                         } else {
 
