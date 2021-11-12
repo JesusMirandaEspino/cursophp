@@ -33,13 +33,30 @@
         }
 
 
-        static public function mdlSeleccionarRegistros($tabla){
+        static public function mdlSeleccionarRegistros($tabla, $item, $valor){
 
-            $statement = Conexion::conect()->prepare( "SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC" );
+            if(  $item == null && $valor == null ){
 
-            $statement->execute();
+                $statement = Conexion::conect()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC");
 
-            return $statement->fetchAll();
+                
+
+                $statement->execute();
+
+                return $statement->fetchAll();
+
+            }else{
+                $statement = Conexion::conect()->prepare("SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha 
+                                                            FROM $tabla  WHERE $item = :$item ORDER BY id DESC");
+
+                $statement->bindParam(":" . $item, $valor, PDO::PARAM_STR);
+                
+                $statement->execute();
+
+                return $statement->fetch();  
+            }
+
+
 
         }
 
