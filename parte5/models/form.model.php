@@ -35,7 +35,7 @@
 
         static public function mdlSeleccionarRegistros($tabla){
 
-            $statement = Conexion::conect()->prepare( "SELECT * FROM $tabla" );
+            $statement = Conexion::conect()->prepare( "SELECT *, DATE_FORMAT(fecha, '%d/%m/%Y') AS fecha FROM $tabla ORDER BY id DESC" );
 
             $statement->execute();
 
