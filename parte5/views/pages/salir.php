@@ -1,3 +1,7 @@
-<div class="col-full-12">
-    <h1>Salir</h1>
-</div>
+<?php
+
+    session_destroy();
+
+    echo '<script>  window.location = "index.php?pages=ingreso"; </script>';
+
+?>

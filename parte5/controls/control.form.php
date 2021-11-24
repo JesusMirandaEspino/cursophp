@@ -55,6 +55,9 @@ class ControladorFormularios {
                 if (is_array($respuesta)) {
 
                         if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['password'] == $_POST['ingresoPwd']) {
+
+                            $_SESSION['validarIngreso'] = 'ok';
+
                             echo '<script> if( window.history.replaceState ){
                             window.history.replaceState( null, null, window.location.href );
 

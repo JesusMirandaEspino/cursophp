@@ -1,6 +1,14 @@
 <?php
 
-
+if( isset($_SESSION['validarIngreso']) ){
+    if($_SESSION['validarIngreso'] != 'ok' ){
+        echo '<script>  window.location = "index.php?pages=ingreso"; </script>';
+        return;
+    }
+}else{
+    echo '<script>  window.location = "index.php?pages=ingreso"; </script>';
+    return;
+}
 
 $usuarios = ControladorFormularios::SeleccionarRegistros();
 
