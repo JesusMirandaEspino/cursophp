@@ -155,7 +155,7 @@ session_start();
 
                         $pages = $_GET['pages'];
 
-                        if ($pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir') {
+                        if ($pages == 'inicio'  || $pages == 'registro' || $pages == 'ingreso' || $pages == 'salir' || $pages == 'editar' ) {
                             include 'pages/' . $pages . '.php';
                         }else{
                             include 'pages/error404.php';

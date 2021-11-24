@@ -60,6 +60,28 @@
 
         }
 
+        /**********************************/
+        /**           Actualizar         **/
+        /**********************************/
+        static public function mdlActualizarRegistro($tabla, $datos){
+
+            $statement = Conexion::conect()->prepare("UPDATE  $tabla SET nombre=:nombre, email=:email, password=:password WHERE id = :id");
+
+            $statement->bindParam(":nombre", $datos['nombre'], PDO::PARAM_STR);
+            $statement->bindParam(":email", $datos['email'], PDO::PARAM_STR);
+            $statement->bindParam(":password", $datos['password'], PDO::PARAM_STR);
+            $statement->bindParam(":id", $datos['id'], PDO::PARAM_INT);
+
+            if ($statement->execute()) {
+                return 'ok';
+            } else {
+                print_r(Conexion::conect()->errorInfo());
+            }
+
+
+            $statement = null;
+            }
+
     }
 
 ?>

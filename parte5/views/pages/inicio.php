@@ -1,16 +1,18 @@
 <?php
 
-if( isset($_SESSION['validarIngreso']) ){
-    if($_SESSION['validarIngreso'] != 'ok' ){
+if (isset($_SESSION['validarIngreso'])) {
+    if ($_SESSION['validarIngreso'] != 'ok') {
         echo '<script>  window.location = "index.php?pages=ingreso"; </script>';
         return;
     }
-}else{
+} else {
     echo '<script>  window.location = "index.php?pages=ingreso"; </script>';
     return;
 }
 
-$usuarios = ControladorFormularios::SeleccionarRegistros();
+
+
+$usuarios = ControladorFormularios::SeleccionarRegistros(null, null);
 
 ?>
 
@@ -35,7 +37,7 @@ $usuarios = ControladorFormularios::SeleccionarRegistros();
                 <td> <?php echo $valor['fecha'] ?> </td>
                 <td>
                     <div class="btn-group">
-                        <button class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> </button>
+                        <a href="index.php?pages=editar&id=<?php echo $valor['id']; ?>" class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> </a>
                         <button class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </button>
                     </div>
                 </td>
