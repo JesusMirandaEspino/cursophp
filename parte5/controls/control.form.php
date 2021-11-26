@@ -59,7 +59,18 @@ class ControladorFormularios {
                 window.history.replaceState( null, null, window.location.href )
                 } </script>';
 
-                echo '<div class="alert alert-success" >Usuario Actualzido</div>';
+                echo '<div class="alert alert-success" >Usuario Actualzido</div>
+                
+                
+                    <script>
+    
+                        setTimeout( function(){  
+                            window.location = "index.php?pages=inicio";
+                        }, 3000 );
+
+                    </script>
+                
+                ';
             }
 
             return $respuesta;
