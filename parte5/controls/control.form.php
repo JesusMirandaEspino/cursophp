@@ -78,6 +78,13 @@ class ControladorFormularios {
     }
 
 
+    /****************************/
+    /*   Eliminar Usuario     */
+    /****************************/
+    public function eliminarRegistro(){
+        #code
+    }
+
     /***********************/
     /*    Ingresar   */
     /**********************/

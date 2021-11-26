@@ -37,8 +37,27 @@ $usuarios = ControladorFormularios::SeleccionarRegistros(null, null);
                 <td> <?php echo $valor['fecha'] ?> </td>
                 <td>
                     <div class="btn-group">
-                        <a href="index.php?pages=editar&id=<?php echo $valor['id']; ?>" class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> </a>
-                        <button class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </button>
+
+                        <div class="px-1">
+                            <a href="index.php?pages=editar&id=<?php echo $valor['id']; ?>" class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> </a>
+                        </div>
+
+                        <div class="px-1">
+                            <form action="" method="post">
+                                <input type="hidden" name="eliminarRegistro" value="<?php echo $valor['id']; ?>">
+                                <button type="submit" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </button>
+
+
+                            <?php 
+                            
+                                $eliminar = new ControladorFormularios();
+                                $eliminar->eliminarRegistro();
+
+                            ?>
+
+                            </form>
+                        </div>
+
                     </div>
                 </td>
             </tr>
