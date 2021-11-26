@@ -82,7 +82,27 @@ class ControladorFormularios {
     /*   Eliminar Usuario     */
     /****************************/
     public function eliminarRegistro(){
-        #code
+        if (isset($_POST['eliminarRegistro'])) {
+
+            $tabla = 'registro';
+
+            $valor = $_POST['eliminarRegistro'];
+
+            $respuesta = ModeloFormularios::mdliminarRegistro($tabla, $valor);
+
+            if( $respuesta == 'ok' ){
+
+                echo '<script> 
+                
+                        if( window.history.replaceState ){
+                            window.history.replaceState( null, null, window.location.href );
+
+                            window.location = "index.php?pages=inicio";
+
+                        } 
+                    </script>';
+            }
+        }
     }
 
     /***********************/

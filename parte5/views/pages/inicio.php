@@ -51,7 +51,7 @@ $usuarios = ControladorFormularios::SeleccionarRegistros(null, null);
                             <?php 
                             
                                 $eliminar = new ControladorFormularios();
-                                $eliminar->eliminarRegistro();
+                                $eliminar -> eliminarRegistro();
 
                             ?>
 

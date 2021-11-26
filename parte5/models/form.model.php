@@ -82,6 +82,27 @@
             $statement = null;
             }
 
+
+        /**********************************/
+        /**            Eliminar          **/
+        /**********************************/
+        static public function mdliminarRegistro($tabla, $valor){
+
+            $statement = Conexion::conect()->prepare("DELETE FROM  $tabla WHERE id = :id ");
+
+
+            $statement->bindParam(":id", $valor, PDO::PARAM_INT);
+
+            if ($statement->execute()) {
+                return 'ok';
+            } else {
+                print_r(Conexion::conect()->errorInfo());
+            }
+
+
+            $statement = null;
+        }
+
     }
 
 ?>
