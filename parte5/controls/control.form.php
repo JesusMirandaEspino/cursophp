@@ -9,13 +9,23 @@ class ControladorFormularios {
     static public function ControlRegistro(){
         if( isset( $_POST['registroNombre'] ) ){
 
-            $tabla = 'registro';
 
-            $datos = ['nombre' => $_POST['registroNombre'], 'email' => $_POST['registroEmail'], 'password' => $_POST['registroPwd']];
+            if( preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/', $_POST['registroNombre']) &&
+                preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix', $_POST['registroEmail']) &&
+                preg_match('/^[a-zA-Z0-9]+$/', $_POST['registroPwd']) ){
+                $tabla = 'registro';
 
-            $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+                $datos = ['nombre' => $_POST['registroNombre'], 'email' => $_POST['registroEmail'], 'password' => $_POST['registroPwd']];
 
-            return $respuesta;
+                $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+
+                return $respuesta;
+
+            }else{
+                $respuesta = 'error';
+                return $respuesta;
+            }
+
 
         }
     }
