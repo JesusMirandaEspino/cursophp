@@ -13,9 +13,17 @@ class ControladorFormularios {
             if( preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/', $_POST['registroNombre']) &&
                 preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix', $_POST['registroEmail']) &&
                 preg_match('/^[a-zA-Z0-9]+$/', $_POST['registroPwd']) ){
+
                 $tabla = 'registro';
 
-                $datos = ['nombre' => $_POST['registroNombre'], 'email' => $_POST['registroEmail'], 'password' => $_POST['registroPwd']];
+                $token = md5($_POST['registroNombre'] . "+" . $_POST['registroEmail']);
+
+                $datos = [  'token' => $token,
+                            'nombre' => $_POST['registroNombre'], 
+                            'email' => $_POST['registroEmail'], 
+                            'password' => $_POST['registroPwd']];
+
+                
 
                 $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
 

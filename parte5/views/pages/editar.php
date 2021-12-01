@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_GET['id'])) {
+if (isset($_GET['token'])) {
 
-    $item = 'id';
-    $valor = $_GET['id'];
+    $item = 'token';
+    $valor = $_GET['token'];
 
     $usuario = ControladorFormularios::SeleccionarRegistros($item, $valor);
 }
@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <input type="password" class="form-control" id="pwd" aria-describedby="pwd" name="actualizarPwd">
                 <input type="hidden" name="actualPwd" value="<?php echo $usuario['password']; ?>">
-                <input type="hidden" name="idUsuario" value="<?php echo $usuario['id']; ?>">
+                <input type="hidden" name="idUsuario" value="<?php echo $usuario['token']; ?>">
             </div>
         </div>
 

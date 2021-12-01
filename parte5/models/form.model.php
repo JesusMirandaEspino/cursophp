@@ -13,8 +13,9 @@
 
             // Statement::Declaracion
 
-            $statement = Conexion::conect()->prepare("INSERT INTO $tabla(nombre, email, password ) VALUES( :nombre, :email, :password ) ");
+            $statement = Conexion::conect()->prepare("INSERT INTO $tabla(token, nombre, email, password ) VALUES( :nombre, :email, :password ) ");
 
+            $statement->bindParam(":token", $datos['token'], PDO::PARAM_STR); 
             $statement->bindParam( ":nombre", $datos['nombre'], PDO::PARAM_STR );
             $statement->bindParam(":email", $datos['email'], PDO::PARAM_STR);
             $statement->bindParam(":password", $datos['password'], PDO::PARAM_STR);
@@ -65,12 +66,12 @@
         /**********************************/
         static public function mdlActualizarRegistro($tabla, $datos){
 
-            $statement = Conexion::conect()->prepare("UPDATE  $tabla SET nombre=:nombre, email=:email, password=:password WHERE id = :id");
+            $statement = Conexion::conect()->prepare("UPDATE  $tabla SET nombre=:nombre, email=:email, password=:password WHERE token = :token");
 
             $statement->bindParam(":nombre", $datos['nombre'], PDO::PARAM_STR);
             $statement->bindParam(":email", $datos['email'], PDO::PARAM_STR);
             $statement->bindParam(":password", $datos['password'], PDO::PARAM_STR);
-            $statement->bindParam(":id", $datos['id'], PDO::PARAM_INT);
+            $statement->bindParam(":token", $datos['token'], PDO::PARAM_STR);
 
             if ($statement->execute()) {
                 return 'ok';
@@ -88,10 +89,10 @@
         /**********************************/
         static public function mdliminarRegistro($tabla, $valor){
 
-            $statement = Conexion::conect()->prepare("DELETE FROM  $tabla WHERE id = :id ");
+            $statement = Conexion::conect()->prepare("DELETE FROM  $tabla WHERE token = :token ");
 
 
-            $statement->bindParam(":id", $valor, PDO::PARAM_INT);
+            $statement->bindParam(":token", $valor, PDO::PARAM_INT);
 
             if ($statement->execute()) {
                 return 'ok';
