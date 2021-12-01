@@ -59,39 +59,70 @@ class ControladorFormularios {
 
         if (isset($_POST['actualizarNombre'])) {
 
-            if( $_POST['actualizarNombre'] != '' ){
-                $password = $_POST['actualizarPwd'];
+
+            if (
+                preg_match('/^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/', $_POST['actualizarNombre']) &&
+                preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix', $_POST['actualizarEmail']) 
+                
+            ) {
+
+                $usuario = ModeloFormularios::mdlSeleccionarRegistros('registro', 'token', $_POST['tokenUsuario']);
+
+                $compararToken = md5($usuario['nombre'] . "+" . $usuario['email']);
+
+
+                if ($compararToken ==  $_POST['tokenUsuario']) {
+
+                    if ($_POST['actualizarNombre'] != '') {
+
+
+                        if(preg_match('/^[a-zA-Z0-9]+$/', $_POST['actualizarPwd'])  ){
+                            $password = $_POST['actualizarPwd'];
+                        }
+                    
+
+
+                    } else {
+                        $password = $_POST['actualPwd'];
+                    }
+
+                    $tabla = 'registro';
+
+                    $datos = ['nombre' => $_POST['actualizarNombre'], 'email' => $_POST['actualizarEmail'], 'password' => $password, 'token' => $_POST['tokenUsuario']];
+
+                    $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
+
+                    if ($respuesta == 'ok') {
+
+                        echo '<script> if( window.history.replaceState ){
+                    window.history.replaceState( null, null, window.location.href )
+                    } </script>';
+
+                        echo '<div class="alert alert-success" >Usuario Actualzido</div>
+                    
+                    
+                        <script>
+        
+                            setTimeout( function(){  
+                                window.location = "index.php?pages=inicio";
+                            }, 3000 );
+
+                        </script>
+                    
+                    ';
+                    }
+
+                    return $respuesta;
+                } else {
+                    $respuesta = 'Error';
+                    return $respuesta;
+                }
+
             }else{
-                $password = $_POST['actualPwd'];
+                $respuesta = 'Error';
+                return $respuesta;              
             }
 
-            $tabla = 'registro';
-
-            $datos = ['nombre' => $_POST['actualizarNombre'], 'email' => $_POST['actualizarEmail'], 'password' => $password, 'id' => $_POST['idUsuario']];
-
-            $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
-
-            if( $respuesta == 'ok' ){
-
-                echo '<script> if( window.history.replaceState ){
-                window.history.replaceState( null, null, window.location.href )
-                } </script>';
-
-                echo '<div class="alert alert-success" >Usuario Actualzido</div>
-                
-                
-                    <script>
-    
-                        setTimeout( function(){  
-                            window.location = "index.php?pages=inicio";
-                        }, 3000 );
-
-                    </script>
-                
-                ';
-            }
-
-            return $respuesta;
         }
     }
 
@@ -102,24 +133,35 @@ class ControladorFormularios {
     public function eliminarRegistro(){
         if (isset($_POST['eliminarRegistro'])) {
 
-            $tabla = 'registro';
 
-            $valor = $_POST['eliminarRegistro'];
+            $usuario = ModeloFormularios::mdlSeleccionarRegistros('registro', 'token', $_POST['eliminarRegistro']);
 
-            $respuesta = ModeloFormularios::mdliminarRegistro($tabla, $valor);
+            $compararToken = md5($usuario['nombre'] . "+" . $usuario['email']);
 
-            if( $respuesta == 'ok' ){
 
-                echo '<script> 
-                
-                        if( window.history.replaceState ){
-                            window.history.replaceState( null, null, window.location.href );
+            if ($compararToken ==  $_POST['eliminarRegistro']) {
 
-                            window.location = "index.php?pages=inicio";
 
-                        } 
-                    </script>';
+                    $tabla = 'registro';
+
+                    $valor = $_POST['eliminarRegistro'];
+
+                    $respuesta = ModeloFormularios::mdliminarRegistro($tabla, $valor);
+
+                    if ($respuesta == 'ok') {
+
+                        echo '<script> 
+                    
+                            if( window.history.replaceState ){
+                                window.history.replaceState( null, null, window.location.href );
+
+                                window.location = "index.php?pages=inicio";
+
+                            } 
+                        </script>';
+                    }
             }
+
         }
     }
 
