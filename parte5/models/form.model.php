@@ -13,7 +13,7 @@
 
             // Statement::Declaracion
 
-            $statement = Conexion::conect()->prepare("INSERT INTO $tabla(token, nombre, email, password ) VALUES( :nombre, :email, :password ) ");
+            $statement = Conexion::conect()->prepare("INSERT INTO $tabla(token, nombre, email, password ) VALUES( :token, :nombre, :email, :password ) ");
 
             $statement->bindParam(":token", $datos['token'], PDO::PARAM_STR); 
             $statement->bindParam( ":nombre", $datos['nombre'], PDO::PARAM_STR );
