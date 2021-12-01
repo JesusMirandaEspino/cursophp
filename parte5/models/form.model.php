@@ -104,6 +104,32 @@
             $statement = null;
         }
 
+
+    /************************************/
+    /**  Actualizar Intentos Fallidos  **/
+    /************************************/
+    static public function mdlActualizarIntentosFallidos($tabla, $valor, $token)
+    {
+
+        $statement = Conexion::conect()->prepare("UPDATE  $tabla SET intentos_fallidos=:intentos_fallidos  WHERE token = :token");
+
+        $statement->bindParam(":intentos_fallidos", $valor, PDO::PARAM_INT);
+        $statement->bindParam(":token", $token, PDO::PARAM_STR);
+
+
+        if ($statement->execute()) {
+            return 'ok';
+        } else {
+            print_r(Conexion::conect()->errorInfo());
+        }
+
+
+        $statement = null;
+    }
+
+
+
+
     }
 
 ?>

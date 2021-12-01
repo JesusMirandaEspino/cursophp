@@ -186,6 +186,10 @@ class ControladorFormularios {
 
                             $_SESSION['validarIngreso'] = 'ok';
 
+                            $intentos_fallidos =  0;
+
+                            ModeloFormularios::mdlActualizarIntentosFallidos($tabla, $intentos_fallidos, $respuesta['token']);
+
                             echo '<script> if( window.history.replaceState ){
                             window.history.replaceState( null, null, window.location.href );
 
@@ -194,6 +198,15 @@ class ControladorFormularios {
                             } </script>';
 
                         } else {
+
+                            if($respuesta['intentos_fallidos'] < 3 ){
+                                $intentos_fallidos = $respuesta['intentos_fallidos'] + 1;
+                                ModeloFormularios::mdlActualizarIntentosFallidos($tabla, $intentos_fallidos, $respuesta['token']);
+                            }else{
+                                    echo '<div class="alert alert-warning" >Ha superado el numero maximo de intentos</div>';
+                            }
+
+
 
                             echo '<script> if( window.history.replaceState ){
                             window.history.replaceState( null, null, window.location.href )
