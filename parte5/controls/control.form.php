@@ -107,7 +107,7 @@ class ControladorFormularios {
                         <script>
         
                             setTimeout( function(){  
-                                window.location = "index.php?pages=inicio";
+                                window.location = "inicio";
                             }, 3000 );
 
                         </script>
@@ -158,7 +158,7 @@ class ControladorFormularios {
                             if( window.history.replaceState ){
                                 window.history.replaceState( null, null, window.location.href );
 
-                                window.location = "index.php?pages=inicio";
+                                window.location = "inicio";
 
                             } 
                         </script>';
@@ -198,7 +198,7 @@ class ControladorFormularios {
                             echo '<script> if( window.history.replaceState ){
                             window.history.replaceState( null, null, window.location.href );
 
-                            window.location = "index.php?pages=inicio";
+                            window.location = "inicio";
 
                             } </script>';
 

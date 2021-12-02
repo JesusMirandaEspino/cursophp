@@ -74,43 +74,43 @@ session_start();
 
                             <?php if ($_GET['pages'] == 'registro') :   ?>
                                 <li class="nav-item">
-                                    <a class="nav-link active" class="" href="index.php?pages=registro">Registro</a>
+                                    <a class="nav-link active" class="" href="registro">Registro</a>
                                 </li>
                             <?php else : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" class="" href="index.php?pages=registro">Registro</a>
+                                    <a class="nav-link" class="" href="registro">Registro</a>
                                 </li>
                             <?php endif   ?>
 
 
                             <?php if ($_GET['pages'] == 'ingreso') :   ?>
                                 <li class="nav-item">
-                                    <a class="nav-link active" class="" href="index.php?pages=ingreso">Ingreso</a>
+                                    <a class="nav-link active" class="" href="ingreso">Ingreso</a>
                                 </li>
                             <?php else : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
+                                    <a class="nav-link" class="" href="ingreso">Ingreso</a>
                                 </li>
                             <?php endif   ?>
 
 
                             <?php if ($_GET['pages'] == 'inicio') :   ?>
                                 <li class="nav-item">
-                                    <a class="nav-link active" class="" href="index.php?pages=inicio">Inicio</a>
+                                    <a class="nav-link active" class="" href="inicio">Inicio</a>
                                 </li>
                             <?php else : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" class="" href="index.php?pages=inicio">Inicio</a>
+                                    <a class="nav-link" class="" href="inicio">Inicio</a>
                                 </li>
                             <?php endif   ?>
 
                             <?php if ($_GET['pages'] == 'salir') :   ?>
                                 <li class="nav-item">
-                                    <a class="nav-link active" class="" href="index.php?pages=salir">Salir</a>
+                                    <a class="nav-link active" class="" href="salir">Salir</a>
                                 </li>
                             <?php else : ?>
                                 <li class="nav-item">
-                                    <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
+                                    <a class="nav-link" class="" href="salir">Salir</a>
                                 </li>
                             <?php endif   ?>
 
@@ -118,16 +118,16 @@ session_start();
                         <?php else : ?>
 
                             <li class="nav-item">
-                                <a class="nav-link active" class="" href="index.php?pages=registro">Registro</a>
+                                <a class="nav-link active" class="" href="registro">Registro</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" class="" href="index.php?pages=ingreso">Ingreso</a>
+                                <a class="nav-link" class="" href="ingreso">Ingreso</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" class="" href="index.php?pages=inicio">Inicio</a>
+                                <a class="nav-link" class="" href="inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" class="" href="index.php?pages=salir">Salir</a>
+                                <a class="nav-link" class="" href="salir">Salir</a>
                             </li>
                             
                         <?php endif   ?>
