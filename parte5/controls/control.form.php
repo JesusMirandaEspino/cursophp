@@ -18,10 +18,13 @@ class ControladorFormularios {
 
                 $token = md5($_POST['registroNombre'] . "+" . $_POST['registroEmail']);
 
+                // Encriptar Contraseña
+                $encriptarContrasena = crypt($_POST['registroPwd'], '$2a$07$D8VxSmTZt2E2YV454mkqAY5ew$'   );
+
                 $datos = [  'token' => $token,
                             'nombre' => $_POST['registroNombre'], 
                             'email' => $_POST['registroEmail'], 
-                            'password' => $_POST['registroPwd']];
+                            'password' => $encriptarContrasena];
 
                 
 
