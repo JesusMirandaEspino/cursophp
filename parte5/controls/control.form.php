@@ -80,7 +80,7 @@ class ControladorFormularios {
 
 
                         if(preg_match('/^[a-zA-Z0-9]+$/', $_POST['actualizarPwd'])  ){
-                            $password = $_POST['actualizarPwd'];
+                            $password =  crypt($_POST['actualizarPwd'], '$2a$07$D8VxSmTZt2E2YV454mkqAY5ew$');
                         }
                     
 
@@ -182,10 +182,12 @@ class ControladorFormularios {
 
             $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
+            $encriptarContrasena = crypt($_POST['ingresoPwd'], '$2a$07$D8VxSmTZt2E2YV454mkqAY5ew$');
+
 
                 if (is_array($respuesta)) {
 
-                        if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['password'] == $_POST['ingresoPwd']) {
+                        if ($respuesta['email'] == $_POST['ingresoEmail'] && $respuesta['password'] == $encriptarContrasena) {
 
                             $_SESSION['validarIngreso'] = 'ok';
 
