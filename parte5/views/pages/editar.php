@@ -49,6 +49,7 @@ if (isset($_GET['token'])) {
                 <input type="password" class="form-control" id="pwd" aria-describedby="pwd" name="actualizarPwd">
                 <input type="hidden" name="actualPwd" value="<?php echo $usuario['password']; ?>">
                 <input type="hidden" name="tokenUsuario" value="<?php echo $usuario['token']; ?>">
+                <input type="hidden" name="idUsuario" value="<?php echo $usuario['id']; ?>">
             </div>
         </div>
 

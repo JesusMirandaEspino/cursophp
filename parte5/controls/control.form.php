@@ -74,7 +74,7 @@ class ControladorFormularios {
                 $compararToken = md5($usuario['nombre'] . "+" . $usuario['email']);
 
 
-                if ($compararToken ==  $_POST['tokenUsuario']) {
+                if ($compararToken ==  $_POST['tokenUsuario'] && $_POST['idUsuario'] == $usuario['id']) {
 
                     if ($_POST['actualizarNombre'] != '') {
 
@@ -91,7 +91,9 @@ class ControladorFormularios {
 
                     $tabla = 'registro';
 
-                    $datos = ['nombre' => $_POST['actualizarNombre'], 'email' => $_POST['actualizarEmail'], 'password' => $password, 'token' => $_POST['tokenUsuario']];
+                    $actualziarToken = md5($_POST['actualizarNombre'] . "+" . $_POST['actualizarEmail']);
+
+                    $datos = ['id' => $_POST['idUsuario'], 'nombre' => $_POST['actualizarNombre'], 'email' => $_POST['actualizarEmail'], 'password' => $password, 'token' => $actualziarToken];
 
                     $respuesta = ModeloFormularios::mdlActualizarRegistro($tabla, $datos);
 
