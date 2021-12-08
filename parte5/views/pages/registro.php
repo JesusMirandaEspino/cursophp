@@ -61,7 +61,7 @@
 
         ?>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" id="registrarse" class="btn btn-primary">Submit</button>
     </form>
 
 

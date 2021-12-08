@@ -196,7 +196,7 @@ session_start();
 
     </footer>
 
-    <script src="assets/js/app.js"></script>
+    <script src="../views/js/script.js"></script>
 
 </body>
 
