@@ -1,16 +1,66 @@
-<?php
+<!DOCTYPE html>
+<html lang="es">
 
-    require_once('./controls/control.layout.php');
-    require_once('./controls/control.form.php');
+<head>
 
-    require_once( './models/conexion.php' );
-    require_once('./models/form.model.php');
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Jesus Miranda">
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/responsivo.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/css/estyle.css">
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <link rel="icon" type="image/png" href="">
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <title></title>
 
-    $conexion = Conexion::conect();
+</head>
+
+<body>
 
 
-    $plantilla = new ControladorPlantilla();
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <header>
 
-    $plantilla->ControlTraerPlantilla();
 
-?>
+
+
+    </header>
+
+
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <main>
+
+    </main>
+
+
+    <!-- **************************  -->
+    <!-- **************************  -->
+    <footer>
+
+
+    </footer>
+
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>
