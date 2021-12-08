@@ -1,3 +1,16 @@
+<?php 
+
+// Se requiere el archivo  
+require_once('controls/layout.controls.php');
+
+
+// Se instancia la clase controlLayout
+$layout = new ControlLayout();
+$layout -> controlShowLayout();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -19,7 +32,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/responsivo.css">
     <link rel="stylesheet" href="assets/css/estilos.css">
-    <link rel="stylesheet" href="assets/css/estyle.css">
+
     <!-- **************************  -->
     <!-- **************************  -->
     <link rel="icon" type="image/png" href="">
@@ -58,7 +71,6 @@
 
 
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/script.js"></script>
 
 
 </body>
