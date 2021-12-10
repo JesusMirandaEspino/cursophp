@@ -12,25 +12,25 @@ BANNER
 
             <li>
 
-                <img src="img/banner01.jpg" class="img-fluid">
+                <img src="./views/img/banner01.jpg" alt="img" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner02.jpg" class="img-fluid">
+                <img src="./views/img/banner02.jpg" alt="img" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner03.jpg" class="img-fluid">
+                <img src="./views/img/banner03.jpg" alt="img" class="img-fluid">
 
             </li>
 
             <li>
 
-                <img src="img/banner04.jpg" class="img-fluid">
+                <img src="./views/img/banner04.jpg" alt="img" class="img-fluid">
 
             </li>
 

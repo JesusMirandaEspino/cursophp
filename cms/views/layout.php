@@ -59,6 +59,31 @@
 
 <body>
 
+
+    <?php   
+
+        /**********************************************
+            Modulos fijos Superiores
+        ***********************************************/ 
+        include 'pages/modules/header.php';
+        include 'pages/modules/net-social-movile.php';
+        include 'pages/modules/movile-search.php';
+        include 'pages/modules/menu.php';
+
+        /**********************************************
+                Modulo para Navegar
+        ***********************************************/         
+        include 'pages/home.php';
+
+        /**********************************************
+                    Modulo fijo inferior
+        ***********************************************/                 
+        include 'pages/modules/footer.php';
+    
+    ?>
+
+
+
     <script src="assets/js/script.js"></script>
 
 
