@@ -52,7 +52,7 @@ CONTENIDO ARTÍCULO
 
                     <!-- PUBLICIDAD -->
 
-                    <img src="img/ad04.png" alt="img" class="img-fluid my-3" width="100%">
+                    <img src="./views/img/ad04.png" alt="img" class="img-fluid my-3" width="100%">
 
                     <p class="textoArticulo my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquid laboriosam suscipit magnam distinctio nisi eaque expedita beatae neque nobis dolores corporis laudantium quo voluptatum facilis, aliquam sed deleniti delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores laborum facere est eos in optio suscipit, consequatur animi placeat adipisci, sunt. Unde distinctio odit, facilis quos eveniet et culpa. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, minus distinctio assumenda porro fugit voluptates officiis atque? Voluptas, soluta eius inventore aspernatur quasi, earum iste maiores porro ipsam, expedita minus.</p>
 
@@ -148,7 +148,7 @@ CONTENIDO ARTÍCULO
 
                                     <a href="articulos.html" class="text-secondary">
 
-                                        <img src="img/articulo01.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                        <img src="./views/img/articulo01.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                                         <h6 class="py-2">Type something here</h6>
 
@@ -162,7 +162,7 @@ CONTENIDO ARTÍCULO
 
                                     <a href="articulos.html" class="text-secondary">
 
-                                        <img src="img/articulo02.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                        <img src="./views/img/articulo02.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                                         <h6 class="py-2">Type something here</h6>
 
@@ -176,7 +176,7 @@ CONTENIDO ARTÍCULO
 
                                     <a href="articulos.html" class="text-secondary">
 
-                                        <img src="img/articulo03.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                        <img src="./views/img/articulo03.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                                         <h6 class="py-2">Type something here</h6>
 
@@ -190,7 +190,7 @@ CONTENIDO ARTÍCULO
 
                                     <a href="articulos.html" class="text-secondary">
 
-                                        <img src="img/articulo04.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                        <img src="./views/img/articulo04.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                                         <h6 class="py-2">Type something here</h6>
 
@@ -234,7 +234,7 @@ CONTENIDO ARTÍCULO
 
                         <div class="col-3 col-sm-4 col-lg-2 p-2">
 
-                            <img src="img/user01.jpg" alt="img" class="img-thumbnail">
+                            <img src="./views/img/user01.jpg" alt="img" class="img-thumbnail">
 
                         </div>
 
@@ -256,7 +256,7 @@ CONTENIDO ARTÍCULO
 
                         <div class="col-3 col-sm-4 col-lg-2 p-2">
 
-                            <img src="img/user02.jpg" alt="img" class="img-thumbnail">
+                            <img src="./views/img/user02.jpg" alt="img" class="img-thumbnail">
 
                         </div>
 
@@ -286,7 +286,7 @@ CONTENIDO ARTÍCULO
 
                             <div class="d-none d-md-block col-md-4 col-lg-3">
 
-                                <img src="img/subirFoto.png" alt="img"class="img-fluid mt-md-3 mt-xl-2">
+                                <img src="./views/img/subirFoto.png" alt="img"class="img-fluid mt-md-3 mt-xl-2">
 
                             </div>
 
@@ -300,7 +300,7 @@ CONTENIDO ARTÍCULO
 
                     <!-- PUBLICIDAD -->
 
-                    <img src="img/ad01.jpg" alt="img"class="img-fluid my-3 d-block d-md-none" width="100%">
+                    <img src="./views/img/ad01.jpg" alt="img"class="img-fluid my-3 d-block d-md-none" width="100%">
 
 
                 </div>
@@ -323,7 +323,7 @@ CONTENIDO ARTÍCULO
 
                             <a href="articulos.html">
 
-                                <img src="img/articulo05.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                <img src="./views/img/articulo05.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                             </a>
 
@@ -347,7 +347,7 @@ CONTENIDO ARTÍCULO
 
                             <a href="articulos.html">
 
-                                <img src="img/articulo06.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                <img src="./views/img/articulo06.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                             </a>
 
@@ -371,7 +371,7 @@ CONTENIDO ARTÍCULO
 
                             <a href="articulos.html">
 
-                                <img src="img/articulo07.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
+                                <img src="./views/img/articulo07.png" alt="Lorem ipsum dolor sit amet" class="img-fluid">
 
                             </a>
 
@@ -402,13 +402,13 @@ CONTENIDO ARTÍCULO
 
                 <div class="my-4">
 
-                    <img src="img/ad02.jpg" alt="img"class="img-fluid">
+                    <img src="./views/img/ad02.jpg" alt="img"class="img-fluid">
 
                 </div>
 
                 <div class="my-4">
 
-                    <img src="img/ad06.png" alt="img"class="img-fluid">
+                    <img src="./views/img/ad06.png" alt="img"class="img-fluid">
 
                 </div>
 
