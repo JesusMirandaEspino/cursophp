@@ -322,19 +322,19 @@ CONTENIDO INICIO
 
                 <div class="my-4">
 
-                    <img src="img/ad01.jpg" class="img-fluid">
+                    <img src="./views/img/ad01.jpg" alt="img" class="img-fluid">
 
                 </div>
 
                 <div class="my-4">
 
-                    <img src="img/ad02.jpg" class="img-fluid">
+                    <img src="./views/img/ad02.jpg" alt="img" class="img-fluid">
 
                 </div>
 
                 <div class="my-4">
 
-                    <img src="img/ad05.png" class="img-fluid">
+                    <img src="./views/img/ad05.png" alt="img" class="img-fluid">
 
                 </div>
 
