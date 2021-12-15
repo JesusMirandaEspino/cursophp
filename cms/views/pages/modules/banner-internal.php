@@ -41,3 +41,45 @@ BANNER
     </div>
 
 </section>
+
+
+
+<script>
+    [{
+            'red': 'facebook',
+            'url': 'https://www.facebook.com',
+            'icono': 'fab fa-facebook-f'
+        },
+        {
+            'red': 'instagram ',
+            'url': 'https://www.facebook.com',
+            'icono': 'fab fa-instagram'
+        },
+        {
+            'red': 'twitter',
+            'url': 'https://www.facebook.com',
+            'icono': 'fab fa-twitter'
+        },
+        {
+            'red': 'youtube',
+            'url': 'https://www.facebook.com',
+            'icono': 'fab fa-twitter'
+        },
+    ]
+</script>
+
+
+
+
+
+
+<li>
+    <a href="#" target="_blank">
+        <i class="fab fa-youtube lead rounded-circle text-white mr-1"></i>
+    </a>
+</li>
+
+<li>
+    <a href="#" target="_blank">
+        <i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-1"></i>
+    </a>
