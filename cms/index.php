@@ -2,7 +2,9 @@
 
 // Se requiere el archivo  
 require_once('controls/layout.controls.php');
+require_once('controls/blogController.php');
 
+require_once('models/blogModels.php');
 
 // Se instancia la clase controlLayout
 $layout = new ControlLayout();

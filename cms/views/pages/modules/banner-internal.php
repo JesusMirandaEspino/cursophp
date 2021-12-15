@@ -61,25 +61,26 @@ BANNER
             'icono': 'fab fa-twitter'
         },
         {
-            'red': 'youtube',
+            'red': 'twitter',
             'url': 'https://www.facebook.com',
-            'icono': 'fab fa-twitter'
+            'icono': 'fab fa-youtube'
+        },
+        {
+            'red': 'snapchat',
+            'url': 'https://www.facebook.com',
+            'icono': 'fab fa-snapchat-ghost'
         },
     ]
+
+
+
+[
+    'curso php', 'pesimo', 'solo llenar base de datos', 'manualmente', 'pesimo profesor', 'llenar datos'
+]
+
+
 </script>
 
 
 
 
-
-
-<li>
-    <a href="#" target="_blank">
-        <i class="fab fa-youtube lead rounded-circle text-white mr-1"></i>
-    </a>
-</li>
-
-<li>
-    <a href="#" target="_blank">
-        <i class="fab fa-snapchat-ghost lead rounded-circle text-white mr-1"></i>
-    </a>

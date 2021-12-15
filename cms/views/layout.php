@@ -1,3 +1,10 @@
+<?php
+
+    $blog = BlogController::ctrShowBlog();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
