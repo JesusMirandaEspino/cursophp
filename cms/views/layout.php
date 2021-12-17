@@ -17,16 +17,17 @@ $blog = BlogController::ctrShowBlog();
 
     <?php    
     
-    $palabasClaves = json_decode( $blog['palabras_claves'] , true  );
+    $palabarsClaves = json_decode( $blog['palabras_claves'] , true  );
+
+    echo json_decode($blog['palabras_claves'], true)  ;
 
     $palabras = '';
 
-    
 
     ?>
 
 
-    <meta name="keywords" content="<?php echo $palabasClaves ?> ">
+    <meta name="keywords" content="<?php echo $palabras ?> ">
 
     <title> <?php echo $blog['titulo']  ?> </title>
 
