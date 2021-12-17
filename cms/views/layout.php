@@ -17,11 +17,18 @@ $blog = BlogController::ctrShowBlog();
 
     <?php    
     
-    $palabarsClaves = json_decode( $blog['palabras_claves'] , true  );
 
-    echo json_decode($blog['palabras_claves'], true)  ;
+
+    $palabarsClaves = json_decode( $blog['palabras_claves']  );
+
 
     $palabras = '';
+
+    foreach($palabarsClaves as $key => $value ){
+        $palabras .= $value . '. ';
+    }
+
+    $palabras = substr($palabras, 0, -2 );
 
 
     ?>
