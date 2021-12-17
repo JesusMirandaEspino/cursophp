@@ -1,6 +1,6 @@
 <?php
 
-    $blog = BlogController::ctrShowBlog();
+$blog = BlogController::ctrShowBlog();
 
 ?>
 
@@ -13,8 +13,22 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<?php echo $blog['descripcion'];  ?> ">
 
-    <title>Juanito Travel</title>
+    <?php    
+    
+    $palabasClaves = json_decode( $blog['palabras_claves'] , true  );
+
+    $palabras = '';
+
+    
+
+    ?>
+
+
+    <meta name="keywords" content="<?php echo $palabasClaves ?> ">
+
+    <title> <?php echo $blog['titulo']  ?> </title>
 
     <link rel="icon" href="img/icono.jpg">
 
@@ -67,26 +81,26 @@
 <body>
 
 
-    <?php   
+    <?php
 
-        /**********************************************
+    /**********************************************
             Modulos fijos Superiores
-        ***********************************************/ 
-        include 'pages/modules/header.php';
-        include 'pages/modules/net-social-movile.php';
-        include 'pages/modules/movile-search.php';
-        include 'pages/modules/menu.php';
+     ***********************************************/
+    include 'pages/modules/header.php';
+    include 'pages/modules/net-social-movile.php';
+    include 'pages/modules/movile-search.php';
+    include 'pages/modules/menu.php';
 
-        /**********************************************
+    /**********************************************
                 Modulo para Navegar
-        ***********************************************/         
-        include 'pages/home.php';
+     ***********************************************/
+    include 'pages/home.php';
 
-        /**********************************************
+    /**********************************************
                     Modulo fijo inferior
-        ***********************************************/                 
-        include 'pages/modules/footer.php';
-    
+     ***********************************************/
+    include 'pages/modules/footer.php';
+
     ?>
 
 

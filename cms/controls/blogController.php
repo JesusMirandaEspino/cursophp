@@ -1,6 +1,6 @@
 <?php
 
-require( '../models/blogModels.php' );
+require( './models/blogModels.php' );
 
 
     Class BlogController{
